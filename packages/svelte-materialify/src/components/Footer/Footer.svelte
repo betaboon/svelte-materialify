@@ -6,6 +6,8 @@
   export let inset = false;
   export let padless = false;
   export let style = null;
+
+  // export let layout = false;
 </script>
 
 <style lang="scss" src="./Footer.scss" global>

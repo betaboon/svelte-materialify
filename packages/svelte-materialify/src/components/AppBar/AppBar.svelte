@@ -1,9 +1,14 @@
 <script>
+  import { getContext } from 'svelte';
+  import layoutContextKey from '../Layout/context';
+
   import Style from '../../internal/Style';
 
   let klass = '';
   export { klass as class };
-  export let height = '56px';
+  export let heightRegular = 56;
+  export let heightDense = 48;
+  export let heightProminent = 128;
   export let tile = false;
   export let flat = false;
   export let dense = false;
@@ -12,6 +17,30 @@
   export let absolute = false;
   export let collapsed = false;
   export let style = '';
+  export let layout = false;
+
+  const styleVars = {
+    'app-bar-height-regular': `${heightRegular}px`,
+    'app-bar-height-dense': `${heightDense}px`,
+    'app-bar-height-prominent': `${heightProminent}px`,
+  };
+
+  let layoutContext;
+  let navigationDrawerDismissable;
+  if (layout) {
+    layoutContext = getContext(layoutContextKey);
+    navigationDrawerDismissable = layoutContext.navigationDrawer.dismissable;
+  }
+
+  $: if (layoutContext) {
+    if (prominent) {
+      layoutContext.appBar.height.set(heightProminent);
+    } else if (dense) {
+      layoutContext.appBar.height.set(heightDense);
+    } else {
+      layoutContext.appBar.height.set(heightRegular);
+    }
+  }
 </script>
 
 <style lang="scss" src="./AppBar.scss" global>
@@ -26,10 +55,12 @@
   class:fixed
   class:absolute
   class:collapsed
-  use:Style={{ 'app-bar-height': height }}
+  use:Style={styleVars}
   {style}>
   <div class="s-app-bar__wrapper">
-    <slot name="icon" />
+    {#if $navigationDrawerDismissable}
+      <slot name="icon" />
+    {/if}
     {#if !collapsed}
       <div class="s-app-bar__title">
         <slot name="title" />

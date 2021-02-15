@@ -15,14 +15,21 @@
   overflow-x: hidden;
 }
 
+.s-navigation-drawer__app_bar {
+  height: var(--s-app-bar-height);
+  flex: 1 0 auto;
+}
+
 .s-navigation-drawer {
   background-color: var(--theme-navigation-drawer);
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
+  flex-basis: var(--s-navigation-drawer-width-regular);
   left: 0;
-  max-width: 100%;
-  width: var(--s-nav-width);
+
+  // max-width: 100%;
+  // width: var(--s-navigation-drawer-width-regular);
   height: 100%;
   overflow: hidden;
   pointer-events: auto;
@@ -30,10 +37,11 @@
   transition-duration: 0.2s;
   transition-timing-function: map-get($transitions, 'fast-out-slow-in');
   will-change: transform;
-  transition-property: transform, visibility, width;
+  transition-property: transform, visibility, width, flex-basis;
 
   &:not(.active) {
     transform: translateX(-100%);
+    flex-basis: 0;
   }
 
   &.fixed {
@@ -69,8 +77,13 @@
   }
 
   &.mini {
-    width: var(--s-nav-min-width);
+    flex-basis: var(--s-navigation-drawer-width-mini);
     overflow: hidden;
+
+    &:not(.active) {
+      transform: translateX(-100%);
+      flex-basis: 0;
+    }
 
     .s-list-item {
       > *:first-child {

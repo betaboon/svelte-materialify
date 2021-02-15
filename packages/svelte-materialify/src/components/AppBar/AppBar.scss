@@ -11,7 +11,7 @@
   transition: $app-bar-transition;
 
   .s-app-bar__wrapper {
-    height: var(--s-app-bar-height);
+    height: var(--s-app-bar-height-regular);
     align-items: center;
     display: flex;
     padding: 4px;
@@ -42,14 +42,14 @@
 
   &.dense {
     .s-app-bar__wrapper {
-      height: 48px;
+      height: var(--s-app-bar-height-dense);
       padding: 0;
     }
   }
 
   &.prominent {
     .s-app-bar__wrapper {
-      height: 128px;
+      height: var(--s-app-bar-height-prominent);
       align-items: flex-start;
     }
 
