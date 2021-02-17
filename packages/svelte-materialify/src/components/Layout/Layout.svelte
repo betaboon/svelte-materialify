@@ -39,59 +39,7 @@
   $: styleVars['navigation-drawer-width'] = $navigationDrawerWidth;
 </script>
 
-<style lang="scss">
-  @import './variables';
-
-  :global(.s-app) {
-    height: 100%;
-  }
-  :global(.s-app-bar) {
-    flex: 0 1 auto;
-  }
-
-  .s-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .s-layout-app-bar {
-    transition-duration: 0.2s;
-    /* transition-timing-function: map-get($transitions, 'fast-out-slow-in'); */
-    /* will-change: transform; */
-    transition-property: margin-left;
-  }
-
-  .full-height-navigation-drawer .s-layout-app-bar {
-    margin-left: var(--s-navigation-drawer-width);
-    height: 0;
-  }
-
-  .s-layout-body {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
-
-  .s-layout-body > * {
-    display: contents;
-  }
-
-  .s-layout-main > :global(*) {
-    flex: 1;
-    overflow: auto;
-  }
-
-  .full-height-navigation-drawer .s-layout-main > :global(*) {
-    margin-top: var(--s-app-bar-height);
-  }
-
-  .debug {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-  }
+<style lang="scss" src="./Layout.scss">
 </style>
 
 <MaterialApp {theme}>
