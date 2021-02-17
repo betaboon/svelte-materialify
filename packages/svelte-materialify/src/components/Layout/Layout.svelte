@@ -1,8 +1,9 @@
 <script>
-  import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import Style from '../../internal/Style';
+  import { setContext } from 'svelte';
   import layoutContextKey from './context';
+
+  import Style from '../../internal/Style';
 
   import MaterialApp from '../MaterialApp';
   import Card from '../Card';
@@ -12,33 +13,30 @@
   export let theme = 'light';
   export let debug = false;
 
-  const layoutContext = {
-    appBar: {
-      height: writable(null),
-    },
-    navigationDrawer: {
-      width: writable(null),
-      dismissable: writable(null),
-      clipped: writable(null),
-    },
-  };
-
+  const layoutContext = writable({});
   setContext(layoutContextKey, layoutContext);
 
-  const { height: appBarHeight } = layoutContext.appBar;
-  const {
-    width: navigationDrawerWidth,
-    dismissable: navigationDrawerDismissable,
-    clipped: navigationDrawerClipped,
-  } = layoutContext.navigationDrawer;
-
-  let styleVars = {};
-  $: {
-    styleVars = {
-      'navigation-drawer-width': $navigationDrawerWidth,
-      'app-bar-height': $appBarHeight,
-    };
+  let appBarHeight;
+  $: try {
+    appBarHeight = $layoutContext.appBar.height;
+  } catch {
+    /**/
   }
+
+  let navigationDrawerWidth;
+  let navigationDrawerClipped;
+  let navigationDrawerDismissable;
+  $: try {
+    navigationDrawerWidth = $layoutContext.navigationDrawer.width;
+    navigationDrawerClipped = $layoutContext.navigationDrawer.clipped;
+    navigationDrawerDismissable = $layoutContext.navigationDrawer.dismissable;
+  } catch {
+    /**/
+  }
+
+  const styleVars = {};
+  $: styleVars['app-bar-height'] = $appBarHeight;
+  $: styleVars['navigation-drawer-width'] = $navigationDrawerWidth;
 </script>
 
 <style lang="scss">

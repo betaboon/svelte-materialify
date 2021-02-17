@@ -1,4 +1,6 @@
 <script>
+  import { writable } from 'svelte/store';
+  import { readonly } from 'svelte-readonly';
   import { getContext } from 'svelte';
   import layoutContextKey from '../Layout/context';
 
@@ -26,20 +28,30 @@
   };
 
   let layoutContext;
-  let navigationDrawerDismissable;
   if (layout) {
     layoutContext = getContext(layoutContextKey);
-    navigationDrawerDismissable = layoutContext.navigationDrawer.dismissable;
   }
 
-  $: if (layoutContext) {
-    if (prominent) {
-      layoutContext.appBar.height.set(heightProminent);
-    } else if (dense) {
-      layoutContext.appBar.height.set(heightDense);
-    } else {
-      layoutContext.appBar.height.set(heightRegular);
-    }
+  const heightStore = writable(null);
+  if (layoutContext) {
+    $layoutContext.appBar = {
+      height: readonly(heightStore),
+    };
+  }
+
+  $: if (prominent) {
+    heightStore.set(heightProminent);
+  } else if (dense) {
+    heightStore.set(heightDense);
+  } else {
+    heightStore.set(heightRegular);
+  }
+
+  let navigationDrawerDismissable = readonly(writable(true));
+  $: try {
+    navigationDrawerDismissable = $layoutContext.navigationDrawer.dismissable;
+  } catch {
+    /**/
   }
 </script>
 

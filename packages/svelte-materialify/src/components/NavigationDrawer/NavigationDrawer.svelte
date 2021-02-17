@@ -1,6 +1,9 @@
 <script>
+  import { writable } from 'svelte/store';
+  import { readonly } from 'svelte-readonly';
   import { getContext } from 'svelte';
   import layoutContextKey from '../Layout/context';
+
   import { fade } from 'svelte/transition';
   import Style from '../../internal/Style';
 
@@ -18,7 +21,7 @@
   export let absolute = false;
   export let right = false;
   export let borderless = false;
-  export let clippedHeight = '56px';
+  export let clippedHeight = 56;
   export let transition = fade;
   export let transitionOpts = {};
   export let index = 4;
@@ -32,24 +35,39 @@
   };
 
   let layoutContext;
-  let appBarHeight;
   if (layout) {
     layoutContext = getContext(layoutContextKey);
-    appBarHeight = layoutContext.appBar.height;
   }
 
-  $: if (layoutContext) {
-    if (active && mini) {
-      layoutContext.navigationDrawer.width.set(widthMini);
-    } else if (active) {
-      layoutContext.navigationDrawer.width.set(widthRegular);
-    } else {
-      layoutContext.navigationDrawer.width.set(0);
-    }
-    layoutContext.navigationDrawer.dismissable.set(dismissable);
-    layoutContext.navigationDrawer.clipped.set(clipped);
-    styleVars['app-bar-height'] = $appBarHeight;
+  const widthStore = writable(null);
+  const clippedStore = writable(null);
+  const dismissableStore = writable(null);
+  if (layoutContext) {
+    $layoutContext.navigationDrawer = {
+      width: readonly(widthStore),
+      clipped: readonly(clippedStore),
+      dismissable: readonly(dismissableStore),
+    };
   }
+
+  $: if (active && mini) {
+    widthStore.set(widthMini);
+  } else if (active) {
+    widthStore.set(widthRegular);
+  } else {
+    widthStore.set(0);
+  }
+  $: clippedStore.set(clipped);
+  $: dismissableStore.set(dismissable);
+
+  let appBarHeight = readonly(writable(0));
+  $: try {
+    appBarHeight = $layoutContext.appBar.height;
+  } catch {
+    /**/
+  }
+
+  $: styleVars['app-bar-height'] = $appBarHeight;
 </script>
 
 <style lang="scss" src="./NavigationDrawer.scss" global>

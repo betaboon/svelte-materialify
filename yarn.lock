@@ -10981,6 +10981,11 @@ svelte-preprocess@^4.6.5:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
+svelte-readonly@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-readonly/-/svelte-readonly-1.0.0.tgz#f36553f03c270a366b41d3f7d26e8213e81aa671"
+  integrity sha512-GauIxY9WXZ211UyQja+1pYa5cP6sYnMQJM+wPpu1cTap0FUSrRpTzGegagruE3twpn8eyvELDnrm/RX7igknWQ==
+
 svelte@^3.32.1:
   version "3.32.1"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
