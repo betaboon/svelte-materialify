@@ -37,7 +37,7 @@
   $: active = $values.includes(value);
 </script>
 
-<style lang="scss" src="./ExpansionPanel.scss" global>
+<style lang="scss" src="./ExpansionPanel.scss">
 </style>
 
 <div

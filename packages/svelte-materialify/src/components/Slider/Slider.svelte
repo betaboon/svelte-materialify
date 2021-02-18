@@ -101,7 +101,7 @@
   });
 </script>
 
-<style lang="scss" src="./Slider.scss" global>
+<style lang="scss" src="./Slider.scss">
 </style>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->

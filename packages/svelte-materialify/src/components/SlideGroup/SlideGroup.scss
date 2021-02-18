@@ -1,8 +1,8 @@
 @import './variables';
 
-.s-slide-group {
-  display: flex;
-}
+// .s-slide-group {
+//   display: flex;
+// }
 
 .s-slide-group__content {
   display: flex;
@@ -33,9 +33,9 @@
     pointer-events: none;
     opacity: 0.5;
 
-    &.hide-disabled-arrows {
-      visibility: hidden;
-      opacity: 0;
-    }
+    // &.hide-disabled-arrows {
+    //   visibility: hidden;
+    //   opacity: 0;
+    // }
   }
 }

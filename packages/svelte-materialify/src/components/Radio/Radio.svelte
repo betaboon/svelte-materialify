@@ -35,7 +35,7 @@
   $: active = group === value;
 </script>
 
-<style lang="scss" src="./Radio.scss" global>
+<style lang="scss" src="./Radio.scss">
 </style>
 
 <div class="s-radio" {style}>

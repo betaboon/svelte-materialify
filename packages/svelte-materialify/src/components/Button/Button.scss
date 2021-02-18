@@ -17,10 +17,10 @@
   transition-property: box-shadow, transform, opacity;
   background-color: var(--theme-app-bar);
 
-  a,
-  .s-icon {
-    color: inherit;
-  }
+  // a,
+  // .s-icon {
+  //   color: inherit;
+  // }
 
   .s-btn__content {
     display: flex;
@@ -145,11 +145,12 @@
     min-width: 0;
     min-height: 0;
     padding: 0;
-    @each $name, $size in $fab-icon-sizes {
-      &.size-#{$name} .s-icon {
-        font-size: #{$size}px;
-      }
-    }
+
+    // @each $name, $size in $fab-icon-sizes {
+    //   &.size-#{$name} .s-icon {
+    //     font-size: #{$size}px;
+    //   }
+    // }
   }
 
   &.s-btn--fab {

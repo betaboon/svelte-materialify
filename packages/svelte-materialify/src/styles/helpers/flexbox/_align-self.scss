@@ -1,0 +1,43 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .align-self-start {
+    align-self: flex-start;
+  }
+  .align-self-end {
+    align-self: flex-end;
+  }
+  .align-self-center {
+    align-self: center;
+  }
+  .align-self-baseline {
+    align-self: baseline;
+  }
+  .align-self-stretch {
+    align-self: stretch;
+  }
+  .align-self-auto {
+    align-self: auto;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .align-self-#{$slice}-start {
+      align-self: flex-start;
+    }
+    .align-self-#{$slice}-end {
+      align-self: flex-end;
+    }
+    .align-self-#{$slice}-center {
+      align-self: center;
+    }
+    .align-self-#{$slice}-baseline {
+      align-self: baseline;
+    }
+    .align-self-#{$slice}-stretch {
+      align-self: stretch;
+    }
+    .align-self-#{$slice}-auto {
+      align-self: auto;
+    }
+  }
+}

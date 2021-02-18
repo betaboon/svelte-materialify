@@ -15,7 +15,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./Card.scss" global>
+<style lang="scss" src="./Card.scss">
 </style>
 
 <div

@@ -34,7 +34,7 @@
   });
 </script>
 
-<style lang="scss" src="./Tab.scss" global>
+<style lang="scss" src="./Tab.scss">
 </style>
 
 <button

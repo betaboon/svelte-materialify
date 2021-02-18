@@ -85,7 +85,7 @@
   });
 </script>
 
-<style lang="scss" src="./Window.scss" global>
+<style lang="scss" src="./Window.scss">
 </style>
 
 <div

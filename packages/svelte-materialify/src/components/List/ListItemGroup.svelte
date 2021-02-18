@@ -15,7 +15,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./ListItemGroup.scss" global>
+<style lang="scss" src="./ListItemGroup.scss">
 </style>
 
 <ItemGroup

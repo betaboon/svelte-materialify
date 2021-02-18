@@ -58,9 +58,9 @@
   &:not(.active) {
     color: var(--theme-tabs);
 
-    & > .s-btn,
-    & > .s-icon {
-      color: var(--theme-tabs);
-    }
+    // & > .s-btn,
+    // & > .s-icon {
+    //   color: var(--theme-tabs);
+    // }
   }
 }

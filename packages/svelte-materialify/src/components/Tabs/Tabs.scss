@@ -6,12 +6,12 @@
   display: flex;
   background-color: var(--theme-cards);
 
-  [slot='tabs'] {
-    display: flex;
-    flex: 1 0 auto;
-    position: relative;
-    white-space: nowrap;
-  }
+  // [slot='tabs'] {
+  //   display: flex;
+  //   flex: 1 0 auto;
+  //   position: relative;
+  //   white-space: nowrap;
+  // }
 
   .s-slide-group {
     width: 100%;
@@ -38,9 +38,9 @@
     .s-tab {
       flex-direction: column;
 
-      > .s-icon {
-        margin-bottom: $tabs-icons-and-text-first-tab-margin-bottom;
-      }
+      // > .s-icon {
+      //   margin-bottom: $tabs-icons-and-text-first-tab-margin-bottom;
+      // }
     }
   }
 
@@ -82,9 +82,9 @@
         display: none;
       }
 
-      [slot='tabs'] {
-        flex-direction: column;
-      }
+      // [slot='tabs'] {
+      //   flex-direction: column;
+      // }
 
       .s-tab-slider {
         left: 0;

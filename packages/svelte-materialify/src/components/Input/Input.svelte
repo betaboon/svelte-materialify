@@ -12,8 +12,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" global>
-  @use "./Input.scss";
+<style lang="scss" src="./Input.scss">
 </style>
 
 <div

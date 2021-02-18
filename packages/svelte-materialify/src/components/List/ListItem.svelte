@@ -35,7 +35,7 @@
   }
 </script>
 
-<style lang="scss" src="./ListItem.scss" global>
+<style lang="scss" src="./ListItem.scss">
 </style>
 
 <div

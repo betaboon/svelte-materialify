@@ -60,7 +60,7 @@
   }
 </script>
 
-<style lang="scss" src="./Checkbox.scss" global>
+<style lang="scss" src="./Checkbox.scss">
 </style>
 
 <div class="s-checkbox" {style}>

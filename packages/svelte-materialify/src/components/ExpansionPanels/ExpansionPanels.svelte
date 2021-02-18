@@ -76,7 +76,7 @@
   });
 </script>
 
-<style lang="scss" src="./ExpansionPanels.scss" global>
+<style lang="scss" src="./ExpansionPanels.scss">
 </style>
 
 <div

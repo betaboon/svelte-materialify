@@ -1,0 +1,14 @@
+@use '../tools/breakpoints';
+
+@mixin styles {
+  @each $display in ('none', 'inline', 'inline-block', 'block', 'flex', 'inline-flex') {
+    .d-#{$display} {
+      display: unquote($display);
+    }
+    @include breakpoints.each using ($slice) {
+      .d-#{$slice}-#{$display} {
+        display: unquote($display);
+      }
+    }
+  }
+}

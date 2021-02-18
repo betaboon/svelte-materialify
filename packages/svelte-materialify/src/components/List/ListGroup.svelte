@@ -32,7 +32,7 @@
   }
 </script>
 
-<style lang="scss" src="./ListGroup.scss" global>
+<style lang="scss" src="./ListGroup.scss">
 </style>
 
 <div class="s-list-group {klass}">

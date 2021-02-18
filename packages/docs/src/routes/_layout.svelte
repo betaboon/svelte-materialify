@@ -59,6 +59,7 @@
     rel="stylesheet"
     href="prism/material-dark.css"
     disabled={$theme === 'light' ? true : null} />
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 </svelte:head>
 
 <MaterialApp theme={$theme}>

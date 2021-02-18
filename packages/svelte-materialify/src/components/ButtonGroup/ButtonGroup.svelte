@@ -36,7 +36,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./ButtonGroup.scss" global>
+<style lang="scss" src="./ButtonGroup.scss">
 </style>
 
 <ItemGroup on:change bind:value {activeClass} {multiple} {mandatory} {max}>

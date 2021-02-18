@@ -109,7 +109,7 @@
   });
 </script>
 
-<style lang="scss" src="./Menu.scss" global>
+<style lang="scss" src="./Menu.scss">
 </style>
 
 <div

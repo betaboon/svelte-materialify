@@ -1,0 +1,27 @@
+@use '../../config';
+
+// TODO get from config
+// $-font-weights: map.get($config, "...
+
+$-font-weights: (
+  'thin': 100,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+  'black': 900,
+) !default;
+
+
+
+@mixin styles {
+  @each $name, $value in $-font-weights {
+    .font-weight-#{$name} {
+      font-weight: $value;
+    }
+  }
+
+  .font-italic {
+    font-style: italic;
+  }
+}

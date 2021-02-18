@@ -33,7 +33,7 @@
   }
 </script>
 
-<style lang="scss" src="./Chip.scss" global>
+<style lang="scss" src="./Chip.scss">
 </style>
 
 {#if active}

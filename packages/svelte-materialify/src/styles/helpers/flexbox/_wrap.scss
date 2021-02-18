@@ -1,0 +1,25 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .flex-#{$slice}-nowrap {
+      flex-wrap: nowrap;
+    }
+    .flex-#{$slice}-wrap {
+      flex-wrap: wrap;
+    }
+    .flex-#{$slice}-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}

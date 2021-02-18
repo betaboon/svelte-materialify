@@ -1,0 +1,51 @@
+$material-light-theme: map-deep-merge(
+  (
+    'surface': #ffffff,
+    'text': (
+      'primary': rgba(material-color('shades', 'black'), 0.87),
+      'secondary': rgba(material-color('shades', 'black'), 0.6),
+      'disabled': rgba(material-color('shades', 'black'), 0.38),
+      'link': material-color('blue', 'darken-2'),
+    ),
+    'icons': (
+      'active': rgba(material-color('shades', 'black'), 0.54),
+      'inactive': rgba(material-color('shades', 'black'), 0.38),
+    ),
+    'inputs': (
+      'box': rgba(material-color('shades', 'black'), 0.04),
+    ),
+    'buttons': (
+      'disabled': rgba(material-color('shades', 'black'), 0.26),
+    ),
+    'tabs': rgba(0, 0, 0, 0.54),
+    'text-fields': (
+      'filled': rgba(material-color('shades', 'black'), 0.06),
+      'filled-hover': rgba(material-color('shades', 'black'), 0.12),
+      'outlined': rgba(material-color('shades', 'black'), 0.38),
+      'outlined-disabled': rgba(material-color('shades', 'black'), 0.26),
+      'border': rgba(material-color('shades', 'black'), 0.42),
+    ),
+    'controls': (
+      'disabled': rgba(material-color('shades', 'black'), 0.26),
+      'thumb': (
+        'inactive': material-color('shades', 'white'),
+        'disabled': material-color('grey', 'lighten-5'),
+      ),
+      'track': (
+        'inactive': rgba(material-color('shades', 'black'), 0.38),
+        'disabled': rgba(material-color('shades', 'black'), 0.12),
+      ),
+    ),
+    'tables': (
+      'active': material-color('grey', 'lighten-4'),
+      'hover': material-color('grey', 'lighten-3'),
+      'group': material-color('grey', 'lighten-3'),
+    ),
+    'dividers': rgba(material-color('shades', 'black'), 0.12),
+    'chips': #e0e0e0,
+    'cards': material-color('shades', 'white'),
+    'app-bar': material-color('grey', 'lighten-4'),
+    'navigation-drawer': material-color('shades', 'white'),
+  ),
+  $material-light-theme
+);

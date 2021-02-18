@@ -1,0 +1,7 @@
+@mixin styles {
+  @each $transform in ('lowercase', 'uppercase', 'capitalize') {
+    .text-#{$transform} {
+      text-transform: #{$transform};
+    }
+  }
+}

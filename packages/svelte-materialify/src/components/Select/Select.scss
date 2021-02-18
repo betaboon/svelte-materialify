@@ -4,30 +4,30 @@
   max-width: 100%;
   position: relative;
 
-  .s-menu__wrapper,
-  .s-menu {
-    width: 100%;
-  }
+  // .s-menu__wrapper,
+  // .s-menu {
+  //   width: 100%;
+  // }
 
-  &:not(.disabled) {
-    input,
-    .s-menu__wrapper {
-      cursor: pointer;
-    }
-  }
+  // &:not(.disabled) {
+  //   input,
+  //   .s-menu__wrapper {
+  //     cursor: pointer;
+  //   }
+  // }
 
-  &.chips {
-    .s-text-field__wrapper.filled .s-text-field__input {
-      padding-top: 24px;
-    }
+  // &.chips {
+  //   .s-text-field__wrapper.filled .s-text-field__input {
+  //     padding-top: 24px;
+  //   }
 
-    input {
-      margin: 0;
-      display: none;
-    }
+  //   input {
+  //     margin: 0;
+  //     display: none;
+  //   }
 
-    .s-chip {
-      margin: $select-chip-margin;
-    }
-  }
+  //   .s-chip {
+  //     margin: $select-chip-margin;
+  //   }
+  // }
 }

@@ -82,8 +82,9 @@
   }
 
   &.active {
-    &:not(:first-child),
-    + .s-expansion-panel {
+    &:not(:first-child) {
+      // &:not(:first-child),
+      // + .s-expansion-panel {
       margin-top: $expansion-panel-active-margin;
 
       &::after {

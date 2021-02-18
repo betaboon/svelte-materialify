@@ -17,7 +17,7 @@
   export let offsetY = 6;
 </script>
 
-<style lang="scss" src="./Badge.scss" global>
+<style lang="scss" src="./Badge.scss">
 </style>
 
 <span class="s-badge">

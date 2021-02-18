@@ -12,7 +12,7 @@
   export let style = null;
 </script>
 
-<style type="scss" src="./Icon.scss" global>
+<style type="scss" src="./Icon.scss">
 </style>
 
 <i

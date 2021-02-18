@@ -59,7 +59,7 @@
   }
 </script>
 
-<style lang="scss" src="./Switch.scss" global>
+<style lang="scss" src="./Switch.scss">
 </style>
 
 <div class="s-switch {klass}" {style}>

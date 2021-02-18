@@ -27,7 +27,7 @@
   export let format = (val) => (Array.isArray(val) ? val.join(', ') : val);
 </script>
 
-<style lang="scss" src="./Select.scss" global>
+<style lang="scss" src="./Select.scss">
 </style>
 
 <div class="s-select {klass}" class:disabled class:chips>

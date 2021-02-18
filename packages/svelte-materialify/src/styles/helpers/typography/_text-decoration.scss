@@ -1,0 +1,7 @@
+@mixin styles {
+  @each $decoration in ('none', 'overline', 'underline', 'line-through') {
+    .text-decoration-#{$decoration} {
+      text-decoration: #{$decoration};
+    }
+  }
+}

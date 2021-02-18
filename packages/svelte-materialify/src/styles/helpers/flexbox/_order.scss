@@ -1,0 +1,30 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .order-first {
+    order: -1;
+  }
+  .order-last {
+    order: $grid-columns + 1;
+  }
+
+  @for $i from 0 through $grid-columns {
+    .order-#{$i} {
+      order: $i;
+    }
+  }
+
+  @include breakpoints.each using ($slice) {
+    .order-#{$slice}-first {
+      order: -1;
+    }
+    .order-#{$slice}-last {
+      order: $grid-columns + 1;
+    }
+    @for $i from 0 through $grid-columns {
+      .order-#{$slice}-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

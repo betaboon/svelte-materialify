@@ -20,7 +20,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./NavigationDrawer.scss" global>
+<style lang="scss" src="./NavigationDrawer.scss">
 </style>
 
 <aside

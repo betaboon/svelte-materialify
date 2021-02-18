@@ -5,7 +5,8 @@
   export { klass as class };
 </script>
 
-<style lang="scss" global>
+<style lang="scss">
+  @use "../../styles/tools/breakpoints";
   @import '../../styles/variables';
 
   .s-container {
@@ -18,13 +19,15 @@
       max-width: 100%;
     }
 
-    @media #{map-get($display-breakpoints, "md-and-up")} {
+    @include breakpoints.from('md') {
       max-width: map-get($container-max-widths, 'md');
     }
-    @media #{map-get($display-breakpoints, "lg-and-up")} {
+
+    @include breakpoints.from('lg') {
       max-width: map-get($container-max-widths, 'lg');
     }
-    @media #{map-get($display-breakpoints, "xl-only")} {
+
+    @include breakpoints.from('xl') {
       max-width: map-get($container-max-widths, 'xl');
     }
   }

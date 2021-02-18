@@ -1,0 +1,37 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .align-start {
+    align-items: flex-start;
+  }
+  .align-end {
+    align-items: flex-end;
+  }
+  .align-center {
+    align-items: center;
+  }
+  .align-baseline {
+    align-items: baseline;
+  }
+  .align-stretch {
+    align-items: stretch;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .align-#{$slice}-start {
+      align-items: flex-start;
+    }
+    .align-#{$slice}-end {
+      align-items: flex-end;
+    }
+    .align-#{$slice}-center {
+      align-items: center;
+    }
+    .align-#{$slice}-baseline {
+      align-items: baseline;
+    }
+    .align-#{$slice}-stretch {
+      align-items: stretch;
+    }
+  }
+}

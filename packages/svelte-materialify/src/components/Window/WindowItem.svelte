@@ -14,7 +14,7 @@
   });
 </script>
 
-<style lang="scss" src="./WindowItem.scss" global>
+<style lang="scss" src="./WindowItem.scss">
 </style>
 
 <div bind:this={window} class="s-window-item {klass}" {style}>

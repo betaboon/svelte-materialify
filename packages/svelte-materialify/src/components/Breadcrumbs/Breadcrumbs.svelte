@@ -16,7 +16,7 @@
   items = items.map((x) => ({ ...defaults, ...x }));
 </script>
 
-<style lang="scss" src="./Breadcrumbs.scss" global>
+<style lang="scss" src="./Breadcrumbs.scss">
 </style>
 
 <ul class="s-breadcrumbs {klass}" class:large {style}>

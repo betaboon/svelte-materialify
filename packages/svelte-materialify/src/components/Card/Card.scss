@@ -46,9 +46,9 @@
   &.link {
     cursor: pointer;
 
-    .s-chip {
-      cursor: pointer;
-    }
+    // .s-chip {
+    //   cursor: pointer;
+    // }
 
     &::before {
       background: currentColor;
@@ -78,8 +78,9 @@
     }
   }
 
-  > *:first-child:not(.s-btn):not(.s-chip),
-  > [slot='progress'] + *:not(.s-btn):not(.s-chip) {
+  // > *:first-child:not(.s-btn):not(.s-chip),
+  // > [slot='progress'] + *:not(.s-btn):not(.s-chip) {
+  > *:first-child:not(.s-btn):not(.s-chip) {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
   }

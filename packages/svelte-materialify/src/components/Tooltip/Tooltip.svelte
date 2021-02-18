@@ -119,7 +119,7 @@
   });
 </script>
 
-<style lang="scss" src="./Tooltip.scss" global>
+<style lang="scss" src="./Tooltip.scss">
 </style>
 
 <svelte:window

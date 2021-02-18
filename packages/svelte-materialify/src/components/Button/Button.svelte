@@ -22,7 +22,7 @@
   export let button = null;
 </script>
 
-<style lang="scss" src="./Button.scss" global>
+<style lang="scss" src="./Button.scss">
 </style>
 
 <button

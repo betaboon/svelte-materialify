@@ -49,7 +49,7 @@
   });
 </script>
 
-<style lang="scss" src="./ItemGroup.scss" global>
+<style lang="scss" src="./ItemGroup.scss">
 </style>
 
 <div class="s-item-group {klass}" {role} {style}>

@@ -6,7 +6,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./Row.scss" global>
+<style lang="scss" src="./Row.scss">
 </style>
 
 <div class="s-row {klass}" class:dense class:no-gutters={noGutters} {style}>

@@ -22,7 +22,7 @@
   }
 </script>
 
-<style lang="scss" src="./ButtonGroupItem.scss" global>
+<style lang="scss" src="./ButtonGroupItem.scss">
 </style>
 
 <Button

@@ -52,7 +52,7 @@
   });
 </script>
 
-<style lang="scss" src="./Tabs.scss" global>
+<style lang="scss" src="./Tabs.scss">
 </style>
 
 <div class="s-tabs" role="tablist" class:vertical>

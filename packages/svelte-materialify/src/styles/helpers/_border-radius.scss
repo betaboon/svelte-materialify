@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../config" as *;
+
+// TODO expose in config
+$-radius-base: 4px !default;
+$-radius-sizes: (
+  0: 0,
+  'sm': $-radius-base / 2,
+  'lg': $-radius-base * 2,
+  'xl': $-radius-base * 6,
+  'pill': 9999px,
+  'circle': 50%,
+) !default;
+
+@mixin styles {
+  .rounded {
+    border-radius: $-radius-base;
+  }
+
+  @each $suffix, $value in $-radius-sizes {
+    .rounded-#{$suffix} {
+      border-radius: $value;
+    }
+    .rounded-tl-#{$suffix} {
+      border-top-left-radius: $value;
+    }
+    .rounded-tr-#{$suffix} {
+      border-top-right-radius: $value;
+    }
+    .rounded-bl-#{$suffix} {
+      border-bottom-left-radius: $value;
+    }
+    .rounded-br-#{$suffix} {
+      border-bottom-right-radius: $value;
+    }
+    .rounded-t-#{$suffix} {
+      border-top-left-radius: $value;
+      border-top-right-radius: $value;
+    }
+    .rounded-b-#{$suffix} {
+      border-bottom-left-radius: $value;
+      border-bottom-right-radius: $value;
+    }
+    .rounded-l-#{$suffix} {
+      border-top-left-radius: $value;
+      border-bottom-left-radius: $value;
+    }
+    .rounded-r-#{$suffix} {
+      border-top-right-radius: $value;
+      border-bottom-right-radius: $value;
+    }
+  }
+}

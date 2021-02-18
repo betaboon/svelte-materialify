@@ -1,0 +1,14 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  @each $align in ('left', 'center', 'right') {
+    .text-#{$align} {
+      text-align: #{$align};
+    }
+    @include breakpoints.each using ($slice) {
+      .text-#{$slice}-#{$align} {
+        text-align: #{$align};
+      }
+    }
+  }
+}

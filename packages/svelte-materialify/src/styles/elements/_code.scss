@@ -1,20 +1,42 @@
-@use '../variables' as *;
+@use '../config';
 
-code,
-kbd {
-  border-radius: $code-kbd-border-radius;
-  font-size: $code-kbd-font-size;
-  font-weight: $code-kbd-font-weight;
-}
+$-border-radius:          config.get('elements', 'code', 'border-radius');
+$-font-size:              config.get('elements', 'code', 'font-size');
+$-font-weight:            config.get('elements', 'code', 'font-weight');
+$-code-padding:           config.get('elements', 'code', 'code', 'padding');
+$-code-color:             config.get('elements', 'code', 'code', 'color');
+$-code-background-color:  config.get('elements', 'code', 'code', 'background-color');
+$-kbd-padding:            config.get('elements', 'code', 'kbd', 'padding');
+$-kbd-color:              config.get('elements', 'code', 'kbd', 'color');
+$-kbd-background-color:   config.get('elements', 'code', 'kbd', 'background-color');
 
-code {
-  background-color: $code-background-color;
-  color: $code-color;
-  padding: $code-padding;
-}
+$-border-radius:          3px !default;
+$-font-size:              85% !default;
+$-font-weight:            900 !default;
+$-code-padding:           0 0.4rem !default;
+$-code-color:             #c0341d !default; // almost red->darken-3
+$-code-background-color:  #fbe5e1 !default; // almost deep-orange->lighten-5
+$-kbd-padding:            0.2rem 0.4rem !default;
+$-kbd-color:              #ffffff !default; // shades->white
+$-kbd-background-color:   #212529 !default; // almost grey->darken-4
 
-kbd {
-  background: $kbd-background-color;
-  color: $kbd-color;
-  padding: $kbd-padding;
+@mixin styles {
+  code,
+  kbd {
+    border-radius: $-border-radius;
+    font-size: $-font-size;
+    font-weight: $-font-weight;
+  }
+
+  code {
+    padding: $-code-padding;
+    color: $-code-color;
+    background-color: $-code-background-color;
+  }
+
+  kbd {
+    padding: $-kbd-padding;
+    color: $-kbd-color;
+    background-color: $-kbd-background-color;
+  }
 }

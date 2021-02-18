@@ -61,7 +61,7 @@
   $: arrowsVisible = wrapperWidth < contentWidth && showArrows;
 </script>
 
-<style lang="scss" src="./SlideGroup.scss" global>
+<style lang="scss" src="./SlideGroup.scss">
 </style>
 
 <ItemGroup

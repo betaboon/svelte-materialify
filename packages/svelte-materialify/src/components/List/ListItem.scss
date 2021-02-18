@@ -49,35 +49,35 @@
   position: relative;
   text-decoration: none;
 
-  .s-avatar {
-    align-self: center;
-    margin-top: $list-item-avatar-margin-y;
-    margin-bottom: $list-item-avatar-margin-y;
-  }
+  // .s-avatar {
+  //   align-self: center;
+  //   margin-top: $list-item-avatar-margin-y;
+  //   margin-bottom: $list-item-avatar-margin-y;
+  // }
 
-  .s-icon {
-    align-self: flex-start;
-    margin-top: $list-item-icon-margin-y;
-    margin-bottom: $list-item-icon-margin-y;
-  }
+  // .s-icon {
+  //   align-self: flex-start;
+  //   margin-top: $list-item-icon-margin-y;
+  //   margin-bottom: $list-item-icon-margin-y;
+  // }
 
-  .s-icon,
-  .s-avatar {
-    display: inline-flex;
-    min-width: $list-item-child-min-width;
-  }
+  // .s-icon,
+  // .s-avatar {
+  //   display: inline-flex;
+  //   min-width: $list-item-child-min-width;
+  // }
 
-  [slot='prepend'] {
-    .s-avatar {
-      margin-right: $list-item-avatar-first-child-margin;
-    }
+  // [slot='prepend'] {
+  //   .s-avatar {
+  //     margin-right: $list-item-avatar-first-child-margin;
+  //   }
 
-    .s-icon,
-    .s-checkbox,
-    .s-radio {
-      margin-right: $list-item-action-icon-margin;
-    }
-  }
+  //   .s-icon,
+  //   .s-checkbox,
+  //   .s-radio {
+  //     margin-right: $list-item-action-icon-margin;
+  //   }
+  // }
 
   &.link {
     cursor: pointer;
@@ -136,9 +136,9 @@
       opacity: 0.12;
     }
 
-    .s-icon {
-      color: inherit;
-    }
+    // .s-icon {
+    //   color: inherit;
+    // }
   }
 
   &::after {
@@ -152,22 +152,23 @@
   }
 }
 
-.s-list-item.dense,
-.s-list.dense .s-list-item {
+// .s-list-item.dense,
+// .s-list.dense .s-list-item {
+.s-list-item.dense {
   min-height: $list-dense-min-height;
 
-  .s-icon {
-    margin-top: $list-item-icon-margin-y/2;
-    margin-bottom: $list-item-icon-margin-y/2;
-  }
+  // .s-icon {
+  //   margin-top: $list-item-icon-margin-y/2;
+  //   margin-bottom: $list-item-icon-margin-y/2;
+  // }
 
-  [slot='prepend'] {
-    .s-icon,
-    .s-checkbox,
-    .s-radio {
-      margin-right: $list-item-dense-action-icon-margin;
-    }
-  }
+  // [slot='prepend'] {
+  //   .s-icon,
+  //   .s-checkbox,
+  //   .s-radio {
+  //     margin-right: $list-item-dense-action-icon-margin;
+  //   }
+  // }
 
   .s-list-item__content {
     padding: $list-dense-content-padding;

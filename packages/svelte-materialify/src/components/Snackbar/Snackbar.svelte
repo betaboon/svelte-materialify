@@ -30,7 +30,7 @@
   }
 </script>
 
-<style lang="scss" src="./Snackbar.scss" global>
+<style lang="scss" src="./Snackbar.scss">
 </style>
 
 <div

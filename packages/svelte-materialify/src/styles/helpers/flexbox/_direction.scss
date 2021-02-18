@@ -1,0 +1,34 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .flex-#{$slice}-row {
+      flex-direction: row;
+    }
+    .flex-#{$slice}-row-reverse {
+      flex-direction: row-reverse;
+    }
+    .flex-#{$slice}-column {
+      flex-direction: column;
+    }
+    .flex-#{$slice}-column-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}

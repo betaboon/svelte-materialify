@@ -18,7 +18,7 @@
   }
 </script>
 
-<style lang="scss" src="./List.scss" global>
+<style lang="scss" src="./List.scss">
 </style>
 
 <div

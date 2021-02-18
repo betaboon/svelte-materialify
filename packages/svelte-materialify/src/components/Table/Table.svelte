@@ -6,7 +6,7 @@
   export { klass as class };
 </script>
 
-<style lang="scss" src="./Table.scss" global>
+<style lang="scss" src="./Table.scss">
 </style>
 
 <div class="s-table__wrapper {klass}" {style}>

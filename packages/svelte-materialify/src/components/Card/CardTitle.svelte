@@ -4,7 +4,7 @@
   export let style = null;
 </script>
 
-<style lang="scss" src="./CardTitle.scss" global>
+<style lang="scss" src="./CardTitle.scss">
 </style>
 
 <div class="s-card-title {klass}" {style}>

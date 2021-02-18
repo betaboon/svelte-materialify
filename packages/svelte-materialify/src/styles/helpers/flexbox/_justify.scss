@@ -1,0 +1,41 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-space-between {
+    justify-content: space-between;
+  }
+
+  .justify-space-around {
+    justify-content: space-around;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .justify-#{$slice}-start {
+      justify-content: flex-start;
+    }
+    .justify-#{$slice}-end {
+      justify-content: flex-end;
+    }
+    .justify-#{$slice}-center {
+      justify-content: center;
+    }
+    .justify-#{$slice}-space-between {
+      justify-content: space-between;
+    }
+    .justify-#{$slice}-space-around {
+      justify-content: space-around;
+    }
+  }
+}

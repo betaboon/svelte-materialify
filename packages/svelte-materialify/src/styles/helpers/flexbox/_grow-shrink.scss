@@ -1,0 +1,31 @@
+@use '../../tools/breakpoints';
+
+@mixin styles {
+  .flex-grow-0 {
+    flex-grow: 0;
+  }
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .flex-shrink-1 {
+    flex-shrink: 1;
+  }
+
+  @include breakpoints.each using ($slice) {
+    .flex-#{$slice}-grow-0 {
+      flex-grow: 0;
+    }
+    .flex-#{$slice}-grow-1 {
+      flex-grow: 1;
+    }
+    .flex-#{$slice}-shrink-0 {
+      flex-shrink: 0;
+    }
+    .flex-#{$slice}-shrink-1 {
+      flex-shrink: 1;
+    }
+  }
+}
