@@ -11,18 +11,17 @@ $info-color: #00bcd4 !default; // cyan->base
 $warning-color: #fb8c00 !default; // orange->darken-1
 $error-color: #f44336 !default; // red->base
 
+// v-- only used in styles/elements/global
 $font-size-root: 16px !default;
-$border-radius-root: 4px !default;
 $line-height-root: 1.5 !default;
+// ^--
+
+$border-radius-root: 4px !default;
 
 
 $spacer: 4px !default;
 
 $body-font-family: 'Roboto', 'Segoe UI', sans-serif !default;
-
-$font-weights: () !default;
-$heading-font-family: $body-font-family !default;
-$headings: () !default;
 
 $grid-columns: 12 !default;
 $grid-gutter: $spacer * 6 !default;

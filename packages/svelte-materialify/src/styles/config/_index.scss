@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'default';
+@use '../overrides';
+
+$config: map.deep-merge(default.$config, overrides.$config);
+
+@function get($key, $keys...) {
+  // @debug $config;
+  @if map.has-key($config, $key, $keys...) {
+    @return map.get($config, $key, $keys...);
+  } @else {
+    $-keys: list.join(($key), $keys);
+    // @warn "Unknown key '#{$-keys}' in $config";
+    @return null;
+  }
+}

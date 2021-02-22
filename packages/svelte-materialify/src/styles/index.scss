@@ -21,7 +21,7 @@
 
 @use 'helpers/typography';
 @use 'helpers/typography/font-weight';
-// @use 'helpers/typography/heading'; // TODO
+@use 'helpers/typography/heading';
 @use 'helpers/typography/text-alignment';
 @use 'helpers/typography/text-decoration';
 @use 'helpers/typography/text-transform';
@@ -33,12 +33,11 @@
 @use 'helpers/float';
 @use 'helpers/spacing'; // TODO needs access to $spacer
 
+// @debug config.get('breakpoints', 'slices');
+
 // @use 'tools/breakpoints';
 // @use 'tools/colors';
 
-// @debug $settings;
-// @include code.styles;
-// @error "we are here";
 // @debug colors.get('red');
 // @debug colors.get('red','lighten-4');
 
@@ -54,9 +53,9 @@
 //
 // @include flexbox.justify-styles;
 
-// @include typography.styles;
+@include typography.styles;
 // @include font-weight.styles;
-// @include heading.styles; // TODO
+// @include heading.styles;
 // @include text-alignment.styles;
 // @include text-decoration.styles
 // @include text-transform.styles
@@ -71,4 +70,4 @@
 //
 // @include helpers.color-styles;
 // @include helpers.styles;
-@include elements.styles;
+// @include elements.styles;
