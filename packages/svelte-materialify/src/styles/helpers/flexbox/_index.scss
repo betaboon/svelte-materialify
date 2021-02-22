@@ -4,7 +4,7 @@
 @use 'direction';
 @use 'grow-shrink';
 @use 'justify';
-@use 'order'; // TODO needs access to $grid-columns
+@use 'order';
 @use 'wrap';
 
 @forward 'align' as align-*;

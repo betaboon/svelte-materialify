@@ -1,8 +1,7 @@
+@use '../config';
 @use '../tools/breakpoints';
 
-// TODO get $spacer from config
-$-spacer: 4px !default;
-
+$-spacer: config.get('common', 'spacer');
 $-steps: 16;
 $-property-map: (
   'm': 'margin',

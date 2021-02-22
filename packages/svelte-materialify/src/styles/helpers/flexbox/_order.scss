@@ -1,7 +1,7 @@
+@use '../../config';
 @use '../../tools/breakpoints';
 
-// TODO get from config
-$-grid-columns: 12 !default;
+$-grid-columns: config.get('grid', 'columns');
 
 @mixin styles {
   @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {

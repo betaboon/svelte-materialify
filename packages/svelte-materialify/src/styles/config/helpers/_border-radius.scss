@@ -1,0 +1,17 @@
+@use '../index' as config;
+
+$-base: 4px;
+
+$-config: (
+  'base': $-base,
+  'sizes': (
+    0: 0,
+    'sm': $-base / 2,
+    'lg': $-base * 2,
+    'xl': $-base * 6,
+    'pill': 9999px,
+    'circle': 50%,
+  ),
+);
+
+@include config.extend('helpers', 'border-radius', $-config);

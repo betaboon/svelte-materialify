@@ -7,5 +7,7 @@
 @use 'elements/blockquote';
 @use 'elements/code';
 @use 'helpers/heading';
+@use 'helpers/border-radius';
+@use 'helpers/typography/font-weight';
 
 @forward 'index';

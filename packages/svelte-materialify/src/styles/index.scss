@@ -4,8 +4,5 @@
 @use 'elements';
 @use 'helpers';
 
-// @debug config.$config;
-@debug config.get('breakpoints', 'slices');
-
 @include helpers.styles;
 @include elements.styles;

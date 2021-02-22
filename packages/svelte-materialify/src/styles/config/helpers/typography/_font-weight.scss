@@ -1,0 +1,12 @@
+@use '../../index' as config;
+
+$-config: (
+  'thin': 100,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+  'black': 900,
+);
+
+@include config.extend('helpers', 'typography', 'font-weights', $-config);

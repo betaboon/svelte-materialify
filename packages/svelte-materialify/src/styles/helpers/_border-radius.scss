@@ -1,23 +1,15 @@
 @use 'sass:map';
 @use '../config';
 
-// TODO expose in config
-$-radius-base: 4px !default;
-$-radius-sizes: (
-  0: 0,
-  'sm': $-radius-base / 2,
-  'lg': $-radius-base * 2,
-  'xl': $-radius-base * 6,
-  'pill': 9999px,
-  'circle': 50%,
-) !default;
+$-base: config.get('helpers', 'border-radius', 'base');
+$-sizes: config.get('helpers', 'border-radius', 'sizes');
 
 @mixin styles {
   .rounded {
-    border-radius: $-radius-base;
+    border-radius: $-base;
   }
 
-  @each $suffix, $value in $-radius-sizes {
+  @each $suffix, $value in $-sizes {
     .rounded-#{$suffix} {
       border-radius: $value;
     }

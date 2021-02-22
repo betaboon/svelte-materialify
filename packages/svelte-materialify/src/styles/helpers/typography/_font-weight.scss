@@ -1,18 +1,6 @@
 @use '../../config';
 
-// TODO get from config
-// $-font-weights: config.get(...)
-
-$-font-weights: (
-  'thin': 100,
-  'light': 300,
-  'regular': 400,
-  'medium': 500,
-  'bold': 700,
-  'black': 900,
-) !default;
-
-
+$-font-weights: config.get('helpers', 'typography', 'font-weights');
 
 @mixin styles {
   @each $name, $value in $-font-weights {
