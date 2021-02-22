@@ -1,1 +1,5 @@
-@use 'node_modules/ress/ress';
+@use 'sass:meta';
+
+@mixin styles {
+  @include meta.load_css('node_modules/ress/ress');
+}

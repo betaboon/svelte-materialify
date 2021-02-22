@@ -1,0 +1,7 @@
+$-spacer: 4px !default;
+
+$config: (
+  'columns': 12,
+  'gutter': $-spacer * 6,
+  'form-gutter': $-spacer * 2,
+);

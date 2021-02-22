@@ -4,6 +4,7 @@
 @use 'elevation';
 @use 'flexbox';
 @use 'float';
+@use 'reset';
 @use 'spacing';
 @use 'typography';
 
@@ -13,6 +14,7 @@
 @forward 'elevation' as elevation-*;
 @forward 'flexbox' as flexbox-*;
 @forward 'float' as float-*;
+@forward 'reset' as reset-*;
 @forward 'spacing' as spacing-*;
 @forward 'typography' as typography-*;
 
@@ -23,6 +25,7 @@
   @include elevation.styles;
   @include flexbox.styles;
   @include float.styles;
+  @include reset.styles;
   @include spacing.styles;
   @include typography.styles;
 }

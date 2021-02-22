@@ -1,31 +1,27 @@
 @use 'breakpoints';
 @use 'colors';
+@use 'transitions';
+@use 'grid';
+@use 'elements/blockquote';
+@use 'elements/code';
 @use 'helpers/heading';
 
 $config: (
   'breakpoints': breakpoints.$config,
   'colors': colors.$config,
+  'grid': grid.$config,
+  'transitions': transitions.$config,
   'helpers': (
     'heading': heading.$config,
   ),
   // 'typography': (),
   'elements': (
-    // 'blockquote': blockquote.$settings,
-    // 'code': (
-    //   'color': #c0341d,
-    //   'background-color': #fbe5e1,
-    //   'padding': 0 0.4rem,
-    //   'font-size': 85%,
-    //   'font-weight': 900,
-    //   'border-radius': 3px,
-    //   'kbd': (
-    //     'color': #ffffff,
-    //     'background-color': #212529,
-    //     'padding': 0.2rem 0.4rem,
-    //     'font-size': 85%,
-    //     'font-weight': 900,
-    //     'border-radius': 3px,
-    //   )
-    // ),
-  )
+    'blockquote': blockquote.$config,
+    'code': code.$config,
+  ),
+  'components': (
+    'container': (
+      'padding': 12px, // $grid-gutter / 2
+    ),
+  ),
 );

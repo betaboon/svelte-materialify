@@ -23,51 +23,36 @@ $spacer: 4px !default;
 
 $body-font-family: 'Roboto', 'Segoe UI', sans-serif !default;
 
-$grid-columns: 12 !default;
-$grid-gutter: $spacer * 6 !default;
-$form-grid-gutter: $spacer * 2 !default;
-$grid-gutters: () !default;
+// $container-max-widths: () !default;
+// $container-padding-x: $grid-gutter / 2 !default;
 
-$container-max-widths: () !default;
-$container-padding-x: $grid-gutter / 2 !default;
-
-$transitions: () !default;
+// $transitions: () !default;
 
 
 // Importing user defined variables
 @import 'material-theme';
 
 
-$grid-gutters: map-deep-merge(
-  (
-    'xs': $grid-gutter / 12,
-    'sm': $grid-gutter / 6,
-    'md': $grid-gutter / 3,
-    'lg': $grid-gutter * 2/3,
-    'xl': $grid-gutter,
-  ),
-  $grid-gutters
-);
+// NOTE this seems to not be used anywhere
+// $grid-gutters: map-deep-merge(
+//   (
+//     'xs': $grid-gutter / 12,
+//     'sm': $grid-gutter / 6,
+//     'md': $grid-gutter / 3,
+//     'lg': $grid-gutter * 2/3,
+//     'xl': $grid-gutter,
+//   ),
+//   $grid-gutters
+// );
 
-$container-max-widths: map-deep-merge(
-  (
-    'md': map-get($grid-breakpoints, 'md') * 0.9375,
-    'lg': map-get($grid-breakpoints, 'lg') * 0.9375,
-    'xl': map-get($grid-breakpoints, 'xl') * 0.9375,
-  ),
-  $container-max-widths
-);
-
-$transitions: map-deep-merge(
-  (
-    'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
-    'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
-    'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
-    'ease-in-out': cubic-bezier(0.4, 0, 0.6, 1),
-    'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
-    'swing': cubic-bezier(0.25, 0.8, 0.5, 1),
-  ),
-  $transitions
-);
+// NOTE doesnt seem to be required
+// $container-max-widths: map-deep-merge(
+//   (
+//     'md': map-get($grid-breakpoints, 'md') * 0.9375,
+//     'lg': map-get($grid-breakpoints, 'lg') * 0.9375,
+//     'xl': map-get($grid-breakpoints, 'xl') * 0.9375,
+//   ),
+//   $container-max-widths
+// );
 
 $primary-transition: 0.3s map-get($transitions, 'swing') !default;

@@ -1,7 +1,7 @@
 @use '../../config';
 
 // TODO get from config
-// $-font-weights: map.get($config, "...
+// $-font-weights: config.get(...)
 
 $-font-weights: (
   'thin': 100,

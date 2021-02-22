@@ -6,29 +6,17 @@
 </script>
 
 <style lang="scss">
-  @use "../../styles/tools/breakpoints";
-  @import '../../styles/variables';
+  @use '../../styles/config';
+  $padding: config.get('components', 'container', 'padding');
 
   .s-container {
     width: 100%;
-    padding: $container-padding-x;
+    padding: $padding;
     margin-right: auto;
     margin-left: auto;
 
     &.fluid {
       max-width: 100%;
-    }
-
-    @include breakpoints.from('md') {
-      max-width: map-get($container-max-widths, 'md');
-    }
-
-    @include breakpoints.from('lg') {
-      max-width: map-get($container-max-widths, 'lg');
-    }
-
-    @include breakpoints.from('xl') {
-      max-width: map-get($container-max-widths, 'xl');
     }
   }
 </style>
