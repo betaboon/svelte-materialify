@@ -1,6 +1,6 @@
 $config: (
   'common': (
-    // 'spacer': 99px,
+    'spacer': 99px,
   ),
   'breakpoints': (
     'slices': (
@@ -16,9 +16,8 @@ $config: (
   ),
   'elements': (
     'code': (
-      'code': (
-        'color': #ffffff,
-      ),
+      'color': #ffffff,
+      'kbd':('padding':400rem 500rem),
     ),
     'blockquote': (
       // 'font-weight': 999,

@@ -1,0 +1,42 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+$override: () !default;
+$config: () !default;
+
+@mixin extend($args...) {
+  @if list.length($args) == 0 {
+    @error "Expected $args to contain a value or key and value.";
+  }
+  $value: null;
+  @if list.length($args) == 1 {
+    $value: list.nth($args, 1);
+  } @else {
+    $value: map.set((), $args...);
+  }
+  $config: map.deep-merge($config, $value) !global;
+}
+
+@function get($keys...) {
+  @if map.has-key($override, $keys...) and map.has-key($config, $keys...) {
+    $override_value: map.get($override, $keys...);
+    $override_type: meta.type-of($override_value);
+    $config_value: map.get($config, $keys...);
+    $config_type: meta.type-of($config_value);
+    @if $override_type != $config_type {
+      @warn "Type mismatch for '#{$keys}': $override=#{$override_type} != $config=#{$config_type}";
+      @return $override_value;
+    } @else if $override_type == 'map' {
+      @return map.deep-merge($config_value, $override_value);
+    } @else {
+      @return $override_value;
+    }
+  } @else if map.has-key($override, $keys...) {
+    @return map.get($override, $keys...);
+  } @else if map.has-key($config, $keys...) {
+    @return map.get($config, $keys...);
+  } @else {
+    @error "Unknown key '#{$keys}' in $config";
+  }
+}
