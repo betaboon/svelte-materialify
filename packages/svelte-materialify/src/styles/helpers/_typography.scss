@@ -1,5 +1,19 @@
-@use "typography/font-weight";
-@use "typography/headings";
-@use "typography/text-alignment";
-@use "typography/text-decoration";
-@use "typography/text-transform";
+@use 'typography/font-weight';
+// @use 'typography/heading'; // TODO
+@use 'typography/text-alignment';
+@use 'typography/text-decoration';
+@use 'typography/text-transform';
+
+@forward 'typography/font-weight' as font-weight-*;
+// @forward 'typography/heading' as heading-*; // TODO
+@forward 'typography/text-alignment' as text-alignment-*;
+@forward 'typography/text-decoration' as text-decoration-*;
+@forward 'typography/text-transform' as text-transform-*;
+
+@mixin styles {
+  @include font-weight.styles;
+  // @include heading.styles; // TODO
+  @include text-alignment.styles;
+  @include text-decoration.styles;
+  @include text-transform.styles;
+}

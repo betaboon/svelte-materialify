@@ -1,9 +1,28 @@
-@use "border_radius";
-@use "color";
-@use "display";
-@use "elevation";
-@use "flex";
-@use "float";
-@use "reset";
-@use "spacing";
-@use "typography";
+@use 'border-radius';
+@use 'color';
+@use 'display';
+@use 'elevation';
+@use 'flexbox';
+@use 'float';
+@use 'spacing';
+@use 'typography';
+
+@forward 'border-radius' as border-radius-*;
+@forward 'color' as color-*;
+@forward 'display' as display-*;
+@forward 'elevation' as elevation-*;
+@forward 'flexbox' as flexbox-*;
+@forward 'float' as float-*;
+@forward 'spacing' as spacing-*;
+@forward 'typography' as typography-*;
+
+@mixin styles {
+  @include border-radius.styles;
+  @include color.styles;
+  @include display.styles;
+  @include elevation.styles;
+  @include flexbox.styles;
+  @include float.styles;
+  @include spacing.styles;
+  @include typography.styles;
+}

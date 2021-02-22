@@ -1,21 +1,36 @@
 @use 'sass:map';
+
 @use 'config';
+
 @use 'elements/blockquote';
 @use 'elements/code';
-// @use 'elements/list'; // TODO
-// @use 'helpers/typograhy'; // TODO
+@use 'elements/list'; // TODO needs access to $spacer
+
+@use 'helpers';
+
+@use 'helpers/flexbox';
+@use 'helpers/flexbox/align';
+@use 'helpers/flexbox/align-content';
+@use 'helpers/flexbox/align-self';
+@use 'helpers/flexbox/direction';
+@use 'helpers/flexbox/grow-shrink';
+@use 'helpers/flexbox/justify';
+@use 'helpers/flexbox/order'; // TODO needs access to $grid-columns
+@use 'helpers/flexbox/wrap';
+
+@use 'helpers/typography';
 @use 'helpers/typography/font-weight';
-// @use 'helpers/typography/headings'; // TODO
+// @use 'helpers/typography/heading'; // TODO
 @use 'helpers/typography/text-alignment';
 @use 'helpers/typography/text-decoration';
 @use 'helpers/typography/text-transform';
+
 @use 'helpers/border-radius';
-@use 'helpers/colors'; // TODO
+@use 'helpers/color'; // TODO needs access to $primary-color etc
 @use 'helpers/display';
 @use 'helpers/elevation';
-// @use 'helpers/flex'; // TODO
-// @use 'helpers/float'; // TODO
-// @use 'helpers/spacing'; // TODO
+@use 'helpers/float';
+@use 'helpers/spacing'; // TODO needs access to $spacer
 
 // @use 'tools/breakpoints';
 // @use 'tools/colors';
@@ -25,26 +40,33 @@
 // @error "we are here";
 // @debug colors.get('red');
 // @debug colors.get('red','lighten-4');
+
+// @include flexbox.styles;
+// @include align.styles;
+// @include align-content.styles;
+// @include align-self.styles;
+// @include direction.styles;
+// @include grow-shrink.styles;
+// @include justify.styles;
+// @include order.styles;
+// @include wrap.styles;
+//
+// @include flexbox.justify-styles;
+
+// @include typography.styles;
 // @include font-weight.styles;
-// @include text-alignment.styles;
-// .foo {
-//   @include breakpoints.between("sm","md", $media: "only screen") {
-//     color: red;
-//   }
-//   @include breakpoints.each using ($slice) {
-//     .foo-#{$slice} {
-//       background-color: red;
-//     }
-//   }
-// }
-// @include border-radius.styles;
-// @debug map.has-key(config.$config, "breakpoints", "slices");
-// @debug config.get('breakpoints');
-// @debug config.get('breakpoints', 'slices');
-// @debug config.get('breakpoints', 'slices', 'sm');
+// @include heading.styles; // TODO
 // @include text-alignment.styles;
 // @include text-decoration.styles
 // @include text-transform.styles
+
+// @include border-radius.styles;
 // @include colors.styles
 // @include display.styles;
 // @include elevation.styles;
+// @include float.styles;
+// @import 'helpers/reset';
+// @include spacing.styles;
+//
+// @include helpers.color-styles;
+@include helpers.styles;

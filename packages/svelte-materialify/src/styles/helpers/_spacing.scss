@@ -1,41 +1,39 @@
-@use '../variables' as *;
-@use '../tools/breakpoints' as *;
+@use '../tools/breakpoints';
 
-@for $i from 0 through 16 {
-  @each $mORp, $marginORpadding in ('m': 'margin', 'p': 'padding') {
-    @each $type,
-      $suffix in ('a': '', 'l': '-left', 'r': '-right', 't': '-top', 'b': '-bottom')
-    {
-      .#{$mORp}#{$type}-#{$i} {
-        #{$marginORpadding}#{$suffix}: $spacer * $i !important;
-      }
-      .#{$mORp}#{$type}-n#{$i} {
-        #{$marginORpadding}#{$suffix}: $spacer * -$i !important;
-      }
+// TODO get $spacer from config
+$-spacer: 4px !default;
 
-      @include create_breakpoints() using ($screen_size) {
-        .#{$mORp}#{$type}-#{$screen_size}-#{$i} {
-          #{$marginORpadding}#{$suffix}: $spacer * $i !important;
+$-steps: 16;
+$-property-map: (
+  'm': 'margin',
+  'p': 'padding',
+);
+$-direction-map: (
+  'a': '',
+  'l': 'left',
+  'r': 'right',
+  't': 'top',
+  'b': 'bottom',
+);
+
+@mixin styles {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    @each $property_abbr, $property in $-property-map {
+      @each $direction_abbr, $direction in $-direction-map {
+        $direction_suffix: if($direction == '', '', '-#{$direction}');
+
+        .#{$property_abbr}#{$direction_abbr}#{$slice_suffix}-auto {
+          #{$property}#{$direction_suffix}: auto !important;
         }
-        .#{$mORp}#{$type}-#{$screen_size}-n#{$i} {
-          #{$marginORpadding}#{$suffix}: $spacer * -$i !important;
+
+        @for $i from 0 through $-steps {
+          .#{$property_abbr}#{$direction_abbr}#{$slice_suffix}-#{$i} {
+            #{$property}#{$direction_suffix}: $-spacer * $i !important;
+          }
+          .#{$property_abbr}#{$direction_abbr}#{$slice_suffix}-n#{$i} {
+            #{$property}#{$direction_suffix}: $-spacer * -$i !important;
+          }
         }
-      }
-    }
-  }
-}
-
-@each $mORp, $marginORpadding in ('m': 'margin', 'p': 'padding') {
-  @each $type,
-    $suffix in ('a': '', 'l': '-left', 'r': '-right', 't': '-top', 'b': '-bottom')
-  {
-    .#{$mORp}#{$type}-auto {
-      #{$marginORpadding}#{$suffix}: auto !important;
-    }
-
-    @include create_breakpoints() using ($screen_size) {
-      .#{$mORp}#{$type}-#{$screen_size}-auto {
-        #{$marginORpadding}#{$suffix}: auto !important;
       }
     }
   }

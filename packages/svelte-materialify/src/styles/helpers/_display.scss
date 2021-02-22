@@ -1,12 +1,9 @@
 @use '../tools/breakpoints';
 
 @mixin styles {
-  @each $display in ('none', 'inline', 'inline-block', 'block', 'flex', 'inline-flex') {
-    .d-#{$display} {
-      display: unquote($display);
-    }
-    @include breakpoints.each using ($slice) {
-      .d-#{$slice}-#{$display} {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    @each $display in ('none', 'inline', 'inline-block', 'block', 'flex', 'inline-flex') {
+      .d#{$slice_suffix}-#{$display} {
         display: unquote($display);
       }
     }

@@ -1,6 +1,9 @@
-@use '../variables' as *;
+// TODO get from config
+$-spacer: 4px !default;
 
-ul,
-ol {
-  padding-left: $spacer * 6;
+@mixin styles {
+  ul,
+  ol {
+    padding-left: $-spacer * 6;
+  }
 }

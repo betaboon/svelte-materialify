@@ -1,40 +1,20 @@
 @use '../../tools/breakpoints';
 
 @mixin styles {
-  .justify-start {
-    justify-content: flex-start;
-  }
-
-  .justify-end {
-    justify-content: flex-end;
-  }
-
-  .justify-center {
-    justify-content: center;
-  }
-
-  .justify-space-between {
-    justify-content: space-between;
-  }
-
-  .justify-space-around {
-    justify-content: space-around;
-  }
-
-  @include breakpoints.each using ($slice) {
-    .justify-#{$slice}-start {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .justify#{$slice_suffix}-start {
       justify-content: flex-start;
     }
-    .justify-#{$slice}-end {
+    .justify#{$slice_suffix}-end {
       justify-content: flex-end;
     }
-    .justify-#{$slice}-center {
+    .justify#{$slice_suffix}-center {
       justify-content: center;
     }
-    .justify-#{$slice}-space-between {
+    .justify#{$slice_suffix}-space-between {
       justify-content: space-between;
     }
-    .justify-#{$slice}-space-around {
+    .justify#{$slice_suffix}-space-around {
       justify-content: space-around;
     }
   }

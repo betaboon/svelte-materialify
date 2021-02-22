@@ -1,25 +1,15 @@
-@use '../tools/breakpoints' as *;
+@use '../tools/breakpoints';
 
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.float-none {
-  float: none;
-}
-
-@include create_breakpoints() using ($screen_size) {
-  .float-#{$screen_size}-left {
-    float: left;
-  }
-  .float-#{$screen_size}-right {
-    float: right;
-  }
-  .float-#{$screen_size}-none {
-    float: none;
+@mixin styles {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .float#{$slice_suffix}-left {
+      float: left;
+    }
+    .float#{$slice_suffix}-right {
+      float: right;
+    }
+    .float#{$slice_suffix}-none {
+      float: none;
+    }
   }
 }

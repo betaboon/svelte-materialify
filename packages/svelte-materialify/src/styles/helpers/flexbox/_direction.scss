@@ -1,33 +1,17 @@
 @use '../../tools/breakpoints';
 
 @mixin styles {
-  .flex-row {
-    flex-direction: row;
-  }
-
-  .flex-row-reverse {
-    flex-direction: row-reverse;
-  }
-
-  .flex-column {
-    flex-direction: column;
-  }
-
-  .flex-column-reverse {
-    flex-direction: column-reverse;
-  }
-
-  @include breakpoints.each using ($slice) {
-    .flex-#{$slice}-row {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .flex#{$slice_suffix}-row {
       flex-direction: row;
     }
-    .flex-#{$slice}-row-reverse {
+    .flex#{$slice_suffix}-row-reverse {
       flex-direction: row-reverse;
     }
-    .flex-#{$slice}-column {
+    .flex#{$slice_suffix}-column {
       flex-direction: column;
     }
-    .flex-#{$slice}-column-reverse {
+    .flex#{$slice_suffix}-column-reverse {
       flex-direction: column-reverse;
     }
   }

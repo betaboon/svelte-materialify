@@ -1,42 +1,23 @@
 @use '../../tools/breakpoints';
 
 @mixin styles {
-  .align-self-start {
-    align-self: flex-start;
-  }
-  .align-self-end {
-    align-self: flex-end;
-  }
-  .align-self-center {
-    align-self: center;
-  }
-  .align-self-baseline {
-    align-self: baseline;
-  }
-  .align-self-stretch {
-    align-self: stretch;
-  }
-  .align-self-auto {
-    align-self: auto;
-  }
-
-  @include breakpoints.each using ($slice) {
-    .align-self-#{$slice}-start {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .align-self#{$slice_suffix}-start {
       align-self: flex-start;
     }
-    .align-self-#{$slice}-end {
+    .align-self#{$slice_suffix}-end {
       align-self: flex-end;
     }
-    .align-self-#{$slice}-center {
+    .align-self#{$slice_suffix}-center {
       align-self: center;
     }
-    .align-self-#{$slice}-baseline {
+    .align-self#{$slice_suffix}-baseline {
       align-self: baseline;
     }
-    .align-self-#{$slice}-stretch {
+    .align-self#{$slice_suffix}-stretch {
       align-self: stretch;
     }
-    .align-self-#{$slice}-auto {
+    .align-self#{$slice_suffix}-auto {
       align-self: auto;
     }
   }

@@ -1,36 +1,20 @@
 @use '../../tools/breakpoints';
 
 @mixin styles {
-  .align-start {
-    align-items: flex-start;
-  }
-  .align-end {
-    align-items: flex-end;
-  }
-  .align-center {
-    align-items: center;
-  }
-  .align-baseline {
-    align-items: baseline;
-  }
-  .align-stretch {
-    align-items: stretch;
-  }
-
-  @include breakpoints.each using ($slice) {
-    .align-#{$slice}-start {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .align#{$slice_suffix}-start {
       align-items: flex-start;
     }
-    .align-#{$slice}-end {
+    .align#{$slice_suffix}-end {
       align-items: flex-end;
     }
-    .align-#{$slice}-center {
+    .align#{$slice_suffix}-center {
       align-items: center;
     }
-    .align-#{$slice}-baseline {
+    .align#{$slice_suffix}-baseline {
       align-items: baseline;
     }
-    .align-#{$slice}-stretch {
+    .align#{$slice_suffix}-stretch {
       align-items: stretch;
     }
   }

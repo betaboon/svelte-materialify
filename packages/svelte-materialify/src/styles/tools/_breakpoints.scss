@@ -5,10 +5,14 @@ $-slices: config.get('breakpoints', 'slices');
 @use 'node_modules/breakpoint-slicer' with ($slices: $-slices, $media: 'only screen');
 @forward 'node_modules/breakpoint-slicer';
 
-@mixin each($slices: ('sm','md','lg','xl')) {
+@mixin each($slices: ('sm','md','lg','xl'), $include_default: false, $suffix: false) {
+  @if $include_default {
+    @content ('');
+  }
   @each $slice in $slices {
+    $slice_name: if($suffix, '-#{$slice}', $slice);
     @include breakpoint-slicer.from($slice) {
-      @content ($slice);
+      @content ($slice_name);
     }
   }
 }

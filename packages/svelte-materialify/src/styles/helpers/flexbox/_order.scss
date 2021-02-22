@@ -1,28 +1,19 @@
 @use '../../tools/breakpoints';
 
+// TODO get from config
+$-grid-columns: 12 !default;
+
 @mixin styles {
-  .order-first {
-    order: -1;
-  }
-  .order-last {
-    order: $grid-columns + 1;
-  }
-
-  @for $i from 0 through $grid-columns {
-    .order-#{$i} {
-      order: $i;
-    }
-  }
-
-  @include breakpoints.each using ($slice) {
-    .order-#{$slice}-first {
+  @include breakpoints.each($include_default: true, $suffix: true) using ($slice_suffix) {
+    .order#{$slice_suffix}-first {
       order: -1;
     }
-    .order-#{$slice}-last {
-      order: $grid-columns + 1;
+    .order#{$slice_suffix}-last {
+      order: $-grid-columns + 1;
     }
-    @for $i from 0 through $grid-columns {
-      .order-#{$slice}-#{$i} {
+
+    @for $i from 0 through $-grid-columns {
+      .order#{$slice_suffix}-#{$i} {
         order: $i;
       }
     }
