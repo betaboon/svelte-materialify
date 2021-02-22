@@ -1,5 +1,6 @@
-// TODO get from config
-$-spacer: 4px !default;
+@use '../config';
+
+$-spacer: config.get('common','spacer');
 
 @mixin styles {
   ul,

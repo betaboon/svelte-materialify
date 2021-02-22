@@ -1,86 +1,11 @@
 @use 'sass:map';
 
-// @use 'test/config';
-// @use 'test/override';
-//
+@use 'config/config-loader' as config;
+@use 'elements';
+@use 'helpers';
+
 // @debug config.$config;
-// @debug config.get('some');
-
-@use 'config';
-@use 'config/common';
-@use 'config/breakpoints';
-// @use 'config/grid';
-
-@debug config.$config;
 @debug config.get('breakpoints', 'slices');
 
-// @use 'elements';
-// @use 'elements/blockquote';
-// @use 'elements/code';
-// @use 'elements/list'; // TODO needs access to $spacer
-//
-// @use 'helpers';
-//
-// @use 'helpers/flexbox';
-// @use 'helpers/flexbox/align';
-// @use 'helpers/flexbox/align-content';
-// @use 'helpers/flexbox/align-self';
-// @use 'helpers/flexbox/direction';
-// @use 'helpers/flexbox/grow-shrink';
-// @use 'helpers/flexbox/justify';
-// @use 'helpers/flexbox/order'; // TODO needs access to $grid-columns
-// @use 'helpers/flexbox/wrap';
-//
-// @use 'helpers/typography';
-// @use 'helpers/typography/font-weight';
-// @use 'helpers/typography/heading';
-// @use 'helpers/typography/text-alignment';
-// @use 'helpers/typography/text-decoration';
-// @use 'helpers/typography/text-transform';
-//
-// @use 'helpers/border-radius';
-// @use 'helpers/color'; // TODO needs access to $primary-color etc
-// @use 'helpers/display';
-// @use 'helpers/elevation';
-// @use 'helpers/float';
-// @use 'helpers/reset';
-// @use 'helpers/spacing'; // TODO needs access to $spacer
-
-// @debug config.get('breakpoints', 'slices');
-
-// @use 'tools/breakpoints';
-// @use 'tools/colors';
-
-// @debug colors.get('red');
-// @debug colors.get('red','lighten-4');
-
-// @include flexbox.styles;
-// @include align.styles;
-// @include align-content.styles;
-// @include align-self.styles;
-// @include direction.styles;
-// @include grow-shrink.styles;
-// @include justify.styles;
-// @include order.styles;
-// @include wrap.styles;
-//
-// @include flexbox.justify-styles;
-
-// @include typography.styles;
-// @include font-weight.styles;
-// @include heading.styles;
-// @include text-alignment.styles;
-// @include text-decoration.styles
-// @include text-transform.styles
-
-// @include border-radius.styles;
-// @include colors.styles
-// @include display.styles;
-// @include elevation.styles;
-// @include float.styles;
-// @include reset.styles;
-// @include spacing.styles;
-//
-// @include helpers.color-styles;
-// @include helpers.styles;
-// @include elements.styles;
+@include helpers.styles;
+@include elements.styles;

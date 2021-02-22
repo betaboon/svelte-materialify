@@ -1,5 +1,8 @@
-$config: (
-  'spacer': 4px,
+@use '../index' as config;
+
+$-config: (
   'font-size': 18px,
   'font-weight': 300,
 );
+
+@include config.extend('elements', 'blockquote', $-config);

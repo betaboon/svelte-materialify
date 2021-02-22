@@ -1,4 +1,6 @@
-$config: (
+@use '../index' as config;
+
+$-config: (
   'font-size': 85%,
   'font-weight': 900,
   'border-radius': 3px,
@@ -11,3 +13,5 @@ $config: (
     'padding': 0.2rem 0.4rem,
   )
 );
+
+@include config.extend('elements', 'code', $-config);

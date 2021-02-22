@@ -1,7 +1,8 @@
 // From: https://raw.githubusercontent.com/Dogfalo/materialize/v1-dev/sass/components/_color-variables.scss
 // Google Color Palette defined: http://www.google.com/design/spec/style/color.html
+@use 'index' as config;
 
-$config: (
+$-config: (
   'red': (
     'base': #f44336,
     'lighten-5': #ffebee,
@@ -300,3 +301,5 @@ $config: (
     'transparent': transparent,
   ),
 );
+
+@include config.extend('colors', $-config);

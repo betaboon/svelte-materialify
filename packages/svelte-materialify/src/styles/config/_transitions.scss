@@ -1,4 +1,6 @@
-$config: (
+@use 'index' as config;
+
+$-config: (
   'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
   'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
   'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
@@ -6,3 +8,5 @@ $config: (
   'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
   'swing': cubic-bezier(0.25, 0.8, 0.5, 1),
 );
+
+@include config.extend('', $-config);

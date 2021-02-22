@@ -1,3 +1,5 @@
+@use '../index' as config;
+
 $-heading-font-family: 'Roboto', 'Segoe UI', sans-serif;
 
 $-headings: (
@@ -107,6 +109,4 @@ $-headings: (
   ),
 );
 
-$config: (
-  'headings': $-headings,
-);
+@include config.extend('helpers', 'heading', 'headings', $-headings);

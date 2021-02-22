@@ -1,7 +1,6 @@
 @use 'index' as config;
-// $-spacer: 4px !default;
-$-spacer: index.get('common', 'spacer');
-@debug "spacer: #{$-spacer}";
+
+$-spacer: config.get('common', 'spacer');
 
 $-config: (
   'columns': 12,
