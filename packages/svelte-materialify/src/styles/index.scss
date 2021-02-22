@@ -2,6 +2,7 @@
 
 @use 'config';
 
+@use 'elements';
 @use 'elements/blockquote';
 @use 'elements/code';
 @use 'elements/list'; // TODO needs access to $spacer
@@ -69,4 +70,5 @@
 // @include spacing.styles;
 //
 // @include helpers.color-styles;
-@include helpers.styles;
+// @include helpers.styles;
+@include elements.styles;

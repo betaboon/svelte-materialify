@@ -1,4 +1,16 @@
-@use 'global';
 @use 'blockquote';
 @use 'code';
-@use 'lists';
+// @use 'global';
+@use 'list';
+
+@forward 'blockquote' as blockquote-*;
+@forward 'code' as code-*;
+// @forward 'global' as global-*;
+@forward 'list' as list-*;
+
+@mixin styles {
+  @include blockquote.styles;
+  @include code.styles;
+  // @include global.styles;
+  @include list.styles;
+}
