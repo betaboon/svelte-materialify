@@ -1,6 +1,6 @@
 @use '../../index' as config;
 
-$-config: (
+$-font-weights: (
   'thin': 100,
   'light': 300,
   'regular': 400,
@@ -9,4 +9,4 @@ $-config: (
   'black': 900,
 );
 
-@include config.extend('helpers', 'typography', 'font-weights', $-config);
+@include config.extend('helpers', 'typography', 'font-weights', $-font-weights);

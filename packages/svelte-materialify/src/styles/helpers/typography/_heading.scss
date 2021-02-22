@@ -1,9 +1,8 @@
 @use 'sass:map';
-@use '../../tools/breakpoints';
 @use '../../config';
+@use '../../tools/breakpoints';
 
 $-headings: config.get('helpers', 'heading', 'headings');
-$-headings: () !default;
 
 @mixin -make-declarations($value_map) {
   font-size: map.get($value_map, 'size');

@@ -2,8 +2,6 @@
 
 $-colors: config.get('colors');
 
-$-colors: () !default;
-
 @mixin styles {
   @each $color, $color_values in $-colors {
     @if $color != 'shades' {
@@ -40,25 +38,4 @@ $-colors: () !default;
       }
     }
   }
-
-  // @each $color,
-  //   $value
-  //     in (
-  //       'primary': $primary-color,
-  //       'secondary': $secondary-color,
-  //       'success': $success-color,
-  //       'info': $info-color,
-  //       'warning': $warning-color,
-  //       'error': $error-color
-  //     )
-  // {
-  //   .#{$color}-color {
-  //     background-color: $value !important;
-  //     border-color: $value !important;
-  //   }
-  //   .#{$color}-text {
-  //     color: $value !important;
-  //     caret-color: $value !important;
-  //   }
-  // }
 }
