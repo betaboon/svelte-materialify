@@ -6,7 +6,7 @@ $config: (
   'some': 'value',
 );
 
-@mixin extend($args...){
+@mixin extend($args...) {
   @if list.length($args) == 0 {
     @error "Expected $args to contain a value or key and value.";
   }

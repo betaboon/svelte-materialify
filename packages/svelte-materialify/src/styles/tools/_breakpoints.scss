@@ -5,7 +5,16 @@ $-slices: config.get('breakpoints', 'slices');
 @use 'node_modules/breakpoint-slicer' with ($slices: $-slices, $media: 'only screen');
 @forward 'node_modules/breakpoint-slicer';
 
-@mixin each($slices: ('sm','md','lg','xl'), $include_default: false, $suffix: false) {
+@mixin each(
+  $slices: (
+    'sm',
+    'md',
+    'lg',
+    'xl',
+  ),
+  $include_default: false,
+  $suffix: false
+) {
   @if $include_default {
     @content ('');
   }

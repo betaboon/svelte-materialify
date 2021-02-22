@@ -1,7 +1,9 @@
 @use 'sass:map';
 @use 'config';
 
-$-config: ('another': 'value');
+$-config: (
+  'another': 'value',
+);
 // @include config.extend();
 // @include config.extend($-config);
 // @include config.extend('key', $-config);

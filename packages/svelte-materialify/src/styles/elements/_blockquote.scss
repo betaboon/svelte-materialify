@@ -1,8 +1,8 @@
 @use '../config';
 
-$-spacer:       config.get('common', 'spacer');
-$-font-size:    config.get('elements', 'blockquote', 'font-size');
-$-font-weight:  config.get('elements', 'blockquote', 'font-weight');
+$-spacer: config.get('common', 'spacer');
+$-font-size: config.get('elements', 'blockquote', 'font-size');
+$-font-weight: config.get('elements', 'blockquote', 'font-weight');
 
 @mixin styles {
   blockquote {

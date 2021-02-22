@@ -4,14 +4,18 @@ $-config: (
   'font-size': 85%,
   'font-weight': 900,
   'border-radius': 3px,
-  'color': #c0341d, // almost red->darken-3
-  'background-color': #fbe5e1, // almost deep-orange->lighten-5
+  // almost red->darken-3
+  'color': #c0341d,
+  // almost deep-orange->lighten-5
+  'background-color': #fbe5e1,
   'padding': 0 0.4rem,
   'kbd': (
-    'color': #ffffff, // shades->white
-    'background-color': #212529, // almost grey->darken-4
+    // shades->white
+    'color': #ffffff,
+    // almost grey->darken-4
+    'background-color': #212529,
     'padding': 0.2rem 0.4rem,
-  )
+  ),
 );
 
 @include config.extend('elements', 'code', $-config);

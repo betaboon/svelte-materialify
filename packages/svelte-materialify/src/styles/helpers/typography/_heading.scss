@@ -6,11 +6,11 @@ $-headings: config.get('helpers', 'heading', 'headings');
 $-headings: () !default;
 
 @mixin -make-declarations($value_map) {
-  font-size:        map.get($value_map, 'size');
-  font-weight:      map.get($value_map, 'weight');
-  line-height:      map.get($value_map, 'line-height');
-  letter-spacing:   map.get($value_map, 'letter-spacing');
-  font-family:      map.get($value_map, 'font-family');
+  font-size: map.get($value_map, 'size');
+  font-weight: map.get($value_map, 'weight');
+  line-height: map.get($value_map, 'line-height');
+  letter-spacing: map.get($value_map, 'letter-spacing');
+  font-family: map.get($value_map, 'font-family');
   @if map.has-key($value_map, 'text-transform') {
     text-transform: map.get($value_map, 'text-transform');
   }
