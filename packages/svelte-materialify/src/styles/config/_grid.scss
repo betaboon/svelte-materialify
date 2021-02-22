@@ -1,7 +1,12 @@
-$-spacer: 4px !default;
+@use 'index' as config;
+// $-spacer: 4px !default;
+$-spacer: index.get('common', 'spacer');
+@debug "spacer: #{$-spacer}";
 
-$config: (
+$-config: (
   'columns': 12,
   'gutter': $-spacer * 6,
   'form-gutter': $-spacer * 2,
 );
+
+@include config.extend('grid', $-config);

@@ -1,0 +1,7 @@
+@use 'index' as config;
+
+$-config: (
+  'spacer': 4px,
+);
+
+@include config.extend('common', $-config);

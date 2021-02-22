@@ -1,38 +1,50 @@
 @use 'sass:map';
 
+// @use 'test/config';
+// @use 'test/override';
+//
+// @debug config.$config;
+// @debug config.get('some');
+
 @use 'config';
+@use 'config/common';
+@use 'config/breakpoints';
+// @use 'config/grid';
 
-@use 'elements';
-@use 'elements/blockquote';
-@use 'elements/code';
-@use 'elements/list'; // TODO needs access to $spacer
+@debug config.$config;
+@debug config.get('breakpoints', 'slices');
 
-@use 'helpers';
-
-@use 'helpers/flexbox';
-@use 'helpers/flexbox/align';
-@use 'helpers/flexbox/align-content';
-@use 'helpers/flexbox/align-self';
-@use 'helpers/flexbox/direction';
-@use 'helpers/flexbox/grow-shrink';
-@use 'helpers/flexbox/justify';
-@use 'helpers/flexbox/order'; // TODO needs access to $grid-columns
-@use 'helpers/flexbox/wrap';
-
-@use 'helpers/typography';
-@use 'helpers/typography/font-weight';
-@use 'helpers/typography/heading';
-@use 'helpers/typography/text-alignment';
-@use 'helpers/typography/text-decoration';
-@use 'helpers/typography/text-transform';
-
-@use 'helpers/border-radius';
-@use 'helpers/color'; // TODO needs access to $primary-color etc
-@use 'helpers/display';
-@use 'helpers/elevation';
-@use 'helpers/float';
-@use 'helpers/reset';
-@use 'helpers/spacing'; // TODO needs access to $spacer
+// @use 'elements';
+// @use 'elements/blockquote';
+// @use 'elements/code';
+// @use 'elements/list'; // TODO needs access to $spacer
+//
+// @use 'helpers';
+//
+// @use 'helpers/flexbox';
+// @use 'helpers/flexbox/align';
+// @use 'helpers/flexbox/align-content';
+// @use 'helpers/flexbox/align-self';
+// @use 'helpers/flexbox/direction';
+// @use 'helpers/flexbox/grow-shrink';
+// @use 'helpers/flexbox/justify';
+// @use 'helpers/flexbox/order'; // TODO needs access to $grid-columns
+// @use 'helpers/flexbox/wrap';
+//
+// @use 'helpers/typography';
+// @use 'helpers/typography/font-weight';
+// @use 'helpers/typography/heading';
+// @use 'helpers/typography/text-alignment';
+// @use 'helpers/typography/text-decoration';
+// @use 'helpers/typography/text-transform';
+//
+// @use 'helpers/border-radius';
+// @use 'helpers/color'; // TODO needs access to $primary-color etc
+// @use 'helpers/display';
+// @use 'helpers/elevation';
+// @use 'helpers/float';
+// @use 'helpers/reset';
+// @use 'helpers/spacing'; // TODO needs access to $spacer
 
 // @debug config.get('breakpoints', 'slices');
 

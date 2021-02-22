@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:meta';
+
+$config: (
+  'some': 'value',
+);
+
+@mixin extend($args...){
+  @if list.length($args) == 0 {
+    @error "Expected $args to contain a value or key and value.";
+  }
+  $value: null;
+  @if list.length($args) == 1 {
+    $value: list.nth($args, 1);
+  } @else {
+    $value: map.set((), $args...);
+  }
+  $config: map.deep-merge($config, $value) !global;
+}
+
+@function get($keys...) {
+  @if map.has-key($config, $keys...) {
+    @return map.get($config, $keys...);
+  } @else {
+    @error "Unknown key '#{$keys}' in $config";
+  }
+}
