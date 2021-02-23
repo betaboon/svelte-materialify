@@ -1,8 +1,13 @@
 @use 'sass:map';
 
 @use 'config/config-loader' as config;
-@use 'elements';
-@use 'helpers';
-
-@include helpers.styles;
-@include elements.styles;
+@use 'tools/theme';
+@use 'themes';
+// @use 'themes/light';
+// @use 'elements';
+// @use 'helpers';
+//
+// @include helpers.styles;
+// @include elements.styles;
+// @include theme.styles(light.$name, light.$theme);
+@include themes.styles;

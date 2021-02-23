@@ -1,0 +1,49 @@
+// @use './variables' as *;
+@use 'sass:map';
+@use 'sass:meta';
+
+@function -flatten($map, $prefix: '') {
+  $output: ();
+  @each $x, $y in $map {
+    @if meta.type-of($y) == 'map' {
+      $output: map.merge($output, -flatten($y, $prefix + '-' + $x));
+    } @else {
+      $output: map.merge(
+        $output,
+        (
+          '--theme#{$prefix}-#{$x}': $y,
+        )
+      );
+    }
+  }
+  @return $output;
+}
+
+@mixin styles($name, $theme) {
+  .theme--#{$name} {
+    @each $x, $y in -flatten($theme) {
+      #{$x}: #{$y};
+    }
+
+    background-color: var(--theme-surface);
+    color: var(--theme-text-primary);
+
+    a {
+      color: map.get($theme, 'text', 'link');
+    }
+
+    // v-- these are the "opacity-helpers"
+    .text--primary {
+      color: var(--theme-text-primary);
+    }
+
+    .text--secondary {
+      color: var(--theme-text-secondary);
+    }
+
+    .text--disabled {
+      color: var(--theme-text-disabled);
+    }
+    // ^--
+  }
+}

@@ -1,0 +1,10 @@
+@use '../config';
+@use '../tools/theme';
+
+$-themes: config.get('themes');
+
+@mixin styles {
+  @each $name, $theme in $-themes {
+    @include theme.styles($name, $theme);
+  }
+}

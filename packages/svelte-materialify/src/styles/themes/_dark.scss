@@ -1,0 +1,66 @@
+@use 'sass:map';
+@use '../tools/colors';
+
+$name: 'dark';
+
+$-elevation-colors: (
+  '0': #000000,
+  '1': #1e1e1e,
+  '2': #222222,
+  '3': #252525,
+  '4': #272727,
+  '6': #2c2c2c,
+  '8': #2e2e2e,
+  '12': #333333,
+  '16': #363636,
+  '24': #373737,
+);
+
+$theme: (
+  'surface': #212121,
+  'icons': (
+    'active': colors.get('shades', 'white'),
+    'inactive': rgba(colors.get('shades', 'white'), 0.5),
+  ),
+  'text': (
+    'primary': colors.get('shades', 'white'),
+    'secondary': rgba(colors.get('shades', 'white'), 0.7),
+    'disabled': rgba(colors.get('shades', 'white'), 0.5),
+    'link': colors.get('blue', 'accent-1'),
+  ),
+  'inputs': (
+    'box': colors.get('shades', 'white'),
+  ),
+  'buttons': (
+    'disabled': rgba(colors.get('shades', 'white'), 0.3),
+  ),
+  'tabs': rgba(colors.get('shades', 'white'), 0.6),
+  'text-fields': (
+    'filled': rgba(colors.get('shades', 'white'), 0.08),
+    'filled-hover': rgba(colors.get('shades', 'white'), 0.16),
+    'outlined': rgba(colors.get('shades', 'white'), 0.24),
+    'outlined-disabled': rgba(colors.get('shades', 'white'), 0.16),
+    'border': rgba(colors.get('shades', 'white'), 0.7),
+  ),
+  'controls': (
+    'disabled': rgba(colors.get('shades', 'white'), 0.3),
+    'thumb': (
+      'inactive': colors.get('grey', 'lighten-1'),
+      'disabled': colors.get('grey', 'darken-3'),
+    ),
+    'track': (
+      'inactive': rgba(colors.get('shades', 'white'), 0.3),
+      'disabled': rgba(colors.get('shades', 'white'), 0.1),
+    ),
+  ),
+  'tables': (
+    'active': #505050,
+    'hover': colors.get('grey', 'darken-2'),
+    'group': colors.get('grey', 'darken-2'),
+  ),
+  'dividers': rgba(colors.get('shades', 'white'), 0.12),
+  'chips': #555555,
+  'cards': map.get($-elevation-colors, '1'),
+  'app-bar': map.get($-elevation-colors, '4'),
+  'navigation-drawer': map.get($-elevation-colors, '16'),
+);

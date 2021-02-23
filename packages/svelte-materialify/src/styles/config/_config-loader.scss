@@ -9,5 +9,6 @@
 @use 'helpers/heading';
 @use 'helpers/border-radius';
 @use 'helpers/typography/font-weight';
+@use 'themes';
 
 @forward 'index';
