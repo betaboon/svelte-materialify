@@ -1,4 +1,3 @@
-// @use 'index' as config;
 @use 'themes';
 @use 'tools/colors';
 
@@ -51,5 +50,4 @@ $theme: (
   'navigation-drawer': colors.get('shades', 'white'),
 );
 
-// @include config.register-theme('my-theme', $theme);
 @include themes.register('my-theme', $theme);
