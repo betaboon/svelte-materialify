@@ -1,4 +1,4 @@
 @use 'config-override';
 @forward '../tools/config' show extend, get with (
-  $override: config-override.$config,
+  $override: config-override.$override,
 );
