@@ -18,16 +18,24 @@ $-elevation-colors: (
 $name: 'dark';
 
 $theme: (
-  'surface': #212121,
-  'icons': (
-    'active': colors.get('shades', 'white'),
-    'inactive': rgba(colors.get('shades', 'white'), 0.5),
+  'surface': colors.get('grey', 'darken-4'),
+  'colors': (
+    'primary': colors.get('deep-purple', 'accent-4'),
+    'secondary': colors.get('blue', 'darken-2'),
+    'success': colors.get('green'),
+    'info': colors.get('cyan'),
+    'warning': colors.get('orange', 'darken-1'),
+    'error': colors.get('red'),
   ),
   'text': (
     'primary': colors.get('shades', 'white'),
     'secondary': rgba(colors.get('shades', 'white'), 0.7),
     'disabled': rgba(colors.get('shades', 'white'), 0.5),
     'link': colors.get('blue', 'accent-1'),
+  ),
+  'icons': (
+    'active': colors.get('shades', 'white'),
+    'inactive': rgba(colors.get('shades', 'white'), 0.5),
   ),
   'inputs': (
     'box': colors.get('shades', 'white'),

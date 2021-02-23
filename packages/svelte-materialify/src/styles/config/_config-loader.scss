@@ -4,10 +4,11 @@
 @use 'breakpoints';
 @use 'grid';
 @use 'transitions';
+@use 'helpers/border-radius';
+@use 'helpers/typography/font';
+@use 'helpers/typography/font-weight';
+@use 'helpers/typography/heading';
 @use 'elements/blockquote';
 @use 'elements/code';
-@use 'helpers/heading';
-@use 'helpers/border-radius';
-@use 'helpers/typography/font-weight';
 
 @forward 'index';

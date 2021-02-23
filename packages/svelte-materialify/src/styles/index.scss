@@ -7,10 +7,7 @@
 @use 'elements';
 @use 'helpers';
 
-@debug config.get('common', 'spacer');
 
-//
-// @include helpers.styles;
-// @include elements.styles;
-// @include theme.styles(light.$name, light.$theme);
+@include helpers.styles;
+@include elements.styles;
 @include themes.styles;

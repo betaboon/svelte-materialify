@@ -1,4 +1,3 @@
-// @use './variables' as *;
 @use 'sass:map';
 @use 'sass:meta';
 
@@ -29,21 +28,25 @@
     color: var(--theme-text-primary);
 
     a {
-      color: map.get($theme, 'text', 'link');
+      color: var(--theme-text-link);
     }
 
     // v-- these are the "opacity-helpers"
-    .text--primary {
-      color: var(--theme-text-primary);
-    }
-
-    .text--secondary {
-      color: var(--theme-text-secondary);
-    }
-
-    .text--disabled {
-      color: var(--theme-text-disabled);
+    @each $variant in ('primary', 'secondary', 'disabled') {
+      .text--#{$variant} {
+        color: var(--theme-text-#{$variant});
+      }
     }
     // ^--
+    @each $variant in ('primary', 'secondary', 'success', 'info', 'warning', 'error') {
+      .#{$variant}-color {
+        background-color: var(--theme-colors-#{$variant}) !important;
+        border-color: var(--theme-colors-#{$variant}) !important;
+      }
+      .#{$variant}-text {
+        color: var(--theme-colors-#{$variant}) !important;
+        caret-color: var(--theme-colors-#{$variant}) !important;
+      }
+    }
   }
 }

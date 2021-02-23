@@ -2,6 +2,7 @@
 @use 'tools/colors';
 
 $theme: (
+  // shades->white
   'surface': #ffffff,
   'text': (
     'primary': rgba(colors.get('shades', 'black'), 0.87),
@@ -44,6 +45,7 @@ $theme: (
     'group': colors.get('grey', 'lighten-3'),
   ),
   'dividers': rgba(colors.get('shades', 'black'), 0.12),
+  // grey->lighten-2
   'chips': #e0e0e0,
   'cards': colors.get('shades', 'white'),
   'app-bar': colors.get('grey', 'lighten-4'),

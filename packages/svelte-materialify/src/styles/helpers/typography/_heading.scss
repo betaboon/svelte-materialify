@@ -2,7 +2,7 @@
 @use '../../config';
 @use '../../tools/breakpoints';
 
-$-headings: config.get('helpers', 'heading', 'headings');
+$-headings: config.get('helpers', 'typography', 'heading');
 
 @mixin -make-declarations($value_map) {
   font-size: map.get($value_map, 'size');

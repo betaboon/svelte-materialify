@@ -3,6 +3,7 @@
 
 $-colors: config.get('colors');
 
+// TODO what is this?
 @mixin has-theme-bg {
   &.primary-color,
   &.secondary-color,
