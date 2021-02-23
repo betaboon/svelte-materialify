@@ -1,11 +1,14 @@
 @use 'sass:map';
 
 @use 'config/config-loader' as config;
-@use 'tools/theme';
-@use 'themes';
-// @use 'themes/light';
-// @use 'elements';
-// @use 'helpers';
+@use 'themes/themes-loader' as themes;
+@use 'my_theme';
+
+@use 'elements';
+@use 'helpers';
+
+@debug config.get('common', 'spacer');
+
 //
 // @include helpers.styles;
 // @include elements.styles;

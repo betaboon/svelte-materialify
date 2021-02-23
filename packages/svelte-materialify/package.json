@@ -72,5 +72,8 @@
     "svelte-preprocess": "^4.6.5"
   },
   "types": "@types/index.d.ts",
-  "svelte": "dist/index.js"
+  "svelte": "dist/index.js",
+  "dependencies": {
+    "breakpoint-slicer": "^3.0.0-beta.1"
+  }
 }

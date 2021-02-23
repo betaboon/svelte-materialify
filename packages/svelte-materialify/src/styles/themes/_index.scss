@@ -1,10 +1,14 @@
-@use '../config';
+@use 'sass:map';
 @use '../tools/theme';
 
-$-themes: config.get('themes');
+$themes: () !default;
+
+@mixin register($name, $theme) {
+  $themes: map.set($themes, $name, $theme) !global;
+}
 
 @mixin styles {
-  @each $name, $theme in $-themes {
+  @each $name, $theme in $themes {
     @include theme.styles($name, $theme);
   }
 }

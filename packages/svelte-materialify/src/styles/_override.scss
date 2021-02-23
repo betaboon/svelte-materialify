@@ -1,0 +1,29 @@
+$override: (
+  'common': (
+    'spacer': 99px,
+  ),
+  'breakpoints': (
+    'slices': (
+      'sm': 720px,
+      'lg': 9999px,
+      'xxl': 666px,
+    ),
+  ),
+  'colors': (
+    'red': (
+      'base': #ffffff,
+    ),
+  ),
+  'elements': (
+    'code': (
+      'color': #ffffff,
+      'kbd': (
+        'padding': 400rem 500rem,
+      ),
+    ),
+    'blockquote': (
+      // 'font-weight': 999,
+      'font-size': 999px,
+    ),
+  ),
+);

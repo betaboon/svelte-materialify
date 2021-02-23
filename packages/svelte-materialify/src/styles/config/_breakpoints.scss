@@ -1,11 +1,11 @@
 @use 'index' as config;
 
 $-slices: (
-  'xs': 0,
-  'sm': 600,
-  'md': 960,
-  'lg': 1280 - 16,
-  'xl': 1920 - 16,
+  'xs': 0px,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1280px - 16px,
+  'xl': 1920px - 16px,
 );
 
 @include config.extend('breakpoints', 'slices', $-slices);

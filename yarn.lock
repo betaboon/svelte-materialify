@@ -3254,10 +3254,10 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-breakpoint-slicer@3.0.0-beta.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/breakpoint-slicer/-/breakpoint-slicer-3.0.0-beta.0.tgz#c765cd3ed04dad05fd70c8caa3a50c33a2e898dd"
-  integrity sha512-7+pFSTofW49zxr3KuYMNDfc2OPfEhnvwTXsRpGSWzdzf9u6u3qoBXSOW3wat2yHufvbO0KlaMAHn2gHTdbpabw==
+breakpoint-slicer@^3.0.0-beta.1:
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/breakpoint-slicer/-/breakpoint-slicer-3.0.0-beta.1.tgz#dd85ed3c07ced451a6ab88ababf14ad0e583ba1a"
+  integrity sha512-k2wiSbLl/8tUDyTOnusiY2eajDp5xQRR6cBziqRAecFmzeFs9PkCiMf7LR9J/+UJf/r3xnqrfnJXPDn5L/PftQ==
 
 browser-process-hrtime@^1.0.0:
   version "1.0.0"

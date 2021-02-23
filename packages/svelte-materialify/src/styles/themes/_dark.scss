@@ -1,7 +1,6 @@
 @use 'sass:map';
+@use 'index' as themes;
 @use '../tools/colors';
-
-$name: 'dark';
 
 $-elevation-colors: (
   '0': #000000,
@@ -15,6 +14,8 @@ $-elevation-colors: (
   '16': #363636,
   '24': #373737,
 );
+
+$name: 'dark';
 
 $theme: (
   'surface': #212121,
@@ -64,3 +65,5 @@ $theme: (
   'app-bar': map.get($-elevation-colors, '4'),
   'navigation-drawer': map.get($-elevation-colors, '16'),
 );
+
+@include themes.register($name, $theme);
