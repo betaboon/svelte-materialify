@@ -1,0 +1,6 @@
+@use '../index' as config;
+
+$-config: (
+);
+
+@include config.extend('components', 'Select', $-config);

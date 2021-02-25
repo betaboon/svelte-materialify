@@ -1,8 +1,12 @@
-@import './variables';
+@use '../../styles/config/config-loader' as config;
+
+$sizes: config.get('components', 'Button', 'sizes');
+$fab-sizes: config.get('components', 'Button', 'fab', 'sizes');
+$headings: config.get('helpers', 'typography', 'headings');
 
 .s-btn {
   align-items: center;
-  border-radius: $btn-border-radius;
+  border-radius: config.get('components', 'Button', 'border-radius');
   display: inline-flex;
   flex: 0 0 auto;
   overflow: hidden;
@@ -13,7 +17,7 @@
   vertical-align: middle;
   white-space: nowrap;
   text-decoration: none;
-  transition-duration: $btn-transition-duration;
+  transition-duration: config.get('components', 'Button', 'transition-duration');
   transition-property: box-shadow, transform, opacity;
   background-color: var(--theme-app-bar);
 
@@ -49,11 +53,11 @@
     position: absolute;
     right: 0;
     top: 0;
-    transition: $btn-transition;
+    transition: config.get('components', 'Button', 'transition');
     background-color: currentColor;
   }
 
-  @each $name, $size in $btn-font-sizes {
+  @each $name, $size in $font-sizes {
     &.size-#{$name} {
       font-size: $size;
     }
@@ -61,26 +65,26 @@
 
   &:not(.disabled) {
     &:hover::before {
-      opacity: $btn-hover-opacity;
+      opacity: config.get('components', 'Button', 'opacity', 'hover');
     }
 
     &.active::before {
-      opacity: $btn-active-opacity;
+      opacity: config.get('components', 'Button', 'opacity', 'active');
     }
 
     &.focus-visible::before {
-      opacity: $btn-focus-opacity;
+      opacity: config.get('components', 'Button', 'opacity', 'focus');
     }
   }
 
-  &:not(.outlined) {
-    @include has-theme-bg {
-      color: map-deep-get($material-dark-theme, 'text', 'primary');
-    }
-  }
+  // &:not(.outlined) {
+  //   @include has-theme-bg {
+  //     color: map-deep-get($material-dark-theme, 'text', 'primary');
+  //   }
+  // }
 
   &:not(.icon):not(.s-btn--fab) {
-    @each $name, $size in $btn-sizes {
+    @each $name, $size in $sizes {
       &.size-#{$name} {
         height: #{$size}px;
         min-width: #{round($size * 1.777777777777778)}px; // default ratio
@@ -118,7 +122,7 @@
   }
 
   &.rounded {
-    border-radius: map-get($rounded, 'pill');
+    border-radius: config.get('helpers', 'border-radius', 'sizes', 'pill');
   }
 
   &.disabled {
@@ -131,7 +135,7 @@
   }
 
   &.icon {
-    @each $name, $size in $btn-sizes {
+    @each $name, $size in $sizes {
       &.size-#{$name} {
         height: #{$size}px;
         width: #{$size}px;

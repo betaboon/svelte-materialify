@@ -1,0 +1,7 @@
+@use '../index' as config;
+
+$-config: (
+  'transition': config.get('common', 'primary-transition'),
+);
+
+@include config.extend('components', 'ItemGroup', $-config);

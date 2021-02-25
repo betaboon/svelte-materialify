@@ -1,0 +1,9 @@
+@use '../index' as config;
+
+$-grid-gutter: config.get('grid', 'gutter');
+
+$-config: (
+  'padding': $-grid-gutter / 2,
+);
+
+@include config.extend('components', 'Container', $-config);

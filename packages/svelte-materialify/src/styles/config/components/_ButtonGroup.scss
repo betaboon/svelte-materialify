@@ -1,0 +1,10 @@
+@use '../index' as config;
+
+$-border-radius-base: config.get('helpers', 'border-radius', 'base');
+
+$-config: (
+  'border-radius': $-border-radius-base,
+  'border-radius-rounded': 24px,
+);
+
+@include config.extend('components', 'ButtonGroup', $-config);

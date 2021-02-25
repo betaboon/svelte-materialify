@@ -1,0 +1,7 @@
+@use '../index' as config;
+
+$-config: (
+  'control-basis': 52px,
+);
+
+@include config.extend('components', 'SlideGroup', $-config);

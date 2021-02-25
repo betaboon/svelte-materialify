@@ -1,0 +1,15 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': 0px,
+  'elevation': 0,
+  'padding': 6px 16px,
+  'padding-padless': 0px,
+  'transition': (
+    'duration': 0.2s,
+    'property': background-color, left, right,
+    'timing-function': config.get('transitions', 'fast-out-slow-in'),
+  ),
+);
+
+@include config.extend('components', 'Footer', $-config);

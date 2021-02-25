@@ -6,8 +6,9 @@
 </script>
 
 <style lang="scss">
-  @use '../../styles/config';
-  $padding: config.get('components', 'container', 'padding');
+  @use '../../styles/config/config-loader' as config;
+
+  $padding: config.get('components', 'Container', 'padding');
 
   .s-container {
     width: 100%;

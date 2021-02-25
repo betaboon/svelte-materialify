@@ -1,0 +1,30 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+
+dense-header-height: 32px !default;
+dense-row-height: dense-header-height !default;
+expanded-content-box-shadow: inset 0 4px 8px -5px rgba(50, 50, 50, 0.75),
+  inset 0 -4px 8px -5px rgba(50, 50, 50, 0.75) !default;
+header-mobile-select-chip-height: 24px !default;
+header-mobile-select-margin-bottom: 8px !default;
+header-mobile-select-max-width: 56px !default;
+header-sort-badge-height: 18px !default;
+header-sort-badge-min-height: 18px !default;
+header-sort-badge-min-width: 18px !default;
+header-sort-badge-width: 18px !default;
+mobile-row-header-font-weight: 600 !default;
+mobile-row-min-height: 48px !default;
+progress-border-radius: border-radius border-radius 0 0 !default;
+regular-header-height: 48px !default;
+regular-row-height: 48px !default;
+row-group-children-td-height: 35px !default;
+scroll-bar-width: 17px !default;
+$edit-dialog-content-padding: 0 16px !default;
+$edit-dialog-actions-padding: 8px !default;
+regular-header-font-size: map-deep-get($headings, 'subtitle-2', 'size') !default;
+regular-row-font-size: map-deep-get($headings, 'subtitle-2', 'size') !default;
+);
+
+@include config.extend('components', 'Table', $-config);

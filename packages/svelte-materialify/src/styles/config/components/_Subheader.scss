@@ -1,0 +1,10 @@
+@use '../index' as config;
+
+$-config: (
+  'inset-margin': 56px,
+  'item-single-height': 48px,
+  'padding-left': 16px,
+  'padding-right': 16px,
+);
+
+@include config.extend('components', 'Subheader', $-config);

@@ -1,0 +1,9 @@
+@use '../index' as config;
+
+$-config: (
+  'inset-margin': 72px,
+  'inset-margin-top': 8px,
+  'inset-max-height': calc(100% - 16px),
+);
+
+@include config.extend('components', 'Divider', $-config);

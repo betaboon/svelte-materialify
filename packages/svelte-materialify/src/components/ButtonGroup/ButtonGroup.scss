@@ -1,7 +1,11 @@
-@import './variables';
+@use '../../styles/config/config-loader' as config;
+
+$primary-transition: config.get('common', 'primary-transition');
+$border-radius: config.get('components', 'ButtonGroup', 'border-radius');
+$border-radius-rounded: config.get('components', 'ButtonGroup', 'border-radius-rounded');
 
 .s-btn-group {
-  border-radius: $btn-group-border-radius;
+  border-radius: $border-radius;
   display: inline-flex;
   max-width: 100%;
   flex: 0 1 auto;
@@ -25,6 +29,6 @@
   }
 
   &.rounded {
-    border-radius: $btn-group-round-border-radius;
+    border-radius: $border-radius-rounded;
   }
 }

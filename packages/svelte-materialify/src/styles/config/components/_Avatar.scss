@@ -1,0 +1,7 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': 50%,
+);
+
+@include config.extend('components', 'Avatar', $-config);

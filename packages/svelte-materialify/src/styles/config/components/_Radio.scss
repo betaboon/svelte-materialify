@@ -1,0 +1,7 @@
+@use '../index' as config;
+
+$-config: (
+  'size': 18px,
+);
+
+@include config.extend('components', 'Radio', $-config);

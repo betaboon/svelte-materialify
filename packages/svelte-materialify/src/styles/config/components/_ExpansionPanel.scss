@@ -1,0 +1,27 @@
+@use '../index' as config;
+
+$-margin-active: 16px;
+
+$-config: (
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+  'margin-active': $-margin-active,
+  'header': (
+    'padding': 16px 24px,
+    'font-size': 0.9375rem,
+    'min-height': 48px,
+    'min-height-active': 64px,
+  ),
+  'content': (
+    'padding': 0px 24px 16px,
+  ),
+  'popout': (
+    'max-width': calc(100% - $-margin-active * 2),
+    'max-width-active': calc(100% - $-margin-active * 2),
+  ),
+  'inset': (
+    'max-width': 100%,
+    'max-width-active': calc(100% - $-margin-active * 2),
+  ),
+);
+
+@include config.extend('components', 'ExpansionPanel', $-config);

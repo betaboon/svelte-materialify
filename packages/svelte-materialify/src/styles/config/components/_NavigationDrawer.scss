@@ -1,0 +1,8 @@
+@use '../index' as config;
+
+$-config: (
+  'border-width': 1px,
+  'mobile-temporary-elevation': 16px,
+);
+
+@include config.extend('components', 'NavigationDrawer', $-config);

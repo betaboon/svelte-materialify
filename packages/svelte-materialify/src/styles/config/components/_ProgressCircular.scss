@@ -1,0 +1,12 @@
+@use '../index' as config;
+@use '../tools/colors';
+
+$-config: (
+  'rotate-animation': progress-circular-rotate 1.4s linear infinite,
+  'rotate-dash': progress-circular-dash 1.4s ease-in-out infinite,
+  'intermediate-svg-transition': all 0.2s ease-in-out,
+  'underlay-stroke': rgba(colors.get('shades', 'black'), 0.1),
+  'overlay-transition': all 0.6s ease-in-out,
+);
+
+@include config.extend('components', 'ProgressCircular', $-config);

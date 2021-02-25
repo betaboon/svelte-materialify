@@ -1,0 +1,10 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': 4px,
+  'elevation': 4,
+  'scrolled-title-padding-bottom': 9px,
+  'transition': 0.25 config.get('transitions', 'fast-out-slow-in'),
+);
+
+@include config.extend('components', 'AppBar', $-config);

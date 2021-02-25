@@ -1,0 +1,8 @@
+@use '../index' as config;
+
+$-config: (
+  'size': 18px,
+  'opacity-disabled': 0.6,
+);
+
+@include config.extend('components', 'Checkbox', $-config);

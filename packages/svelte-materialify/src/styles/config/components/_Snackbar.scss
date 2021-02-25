@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../index' as config;
+
+$-heading-body-2: config.get('helpers', 'typography', 'body-2');
+
+$-config: (
+  'z-index': 1000,
+  'z-index-absolute': 1,
+  'background-color': #333333,
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+  'color': hsla(0, 0%, 100%, 0.87),
+  'padding': 14px 16px,
+  'padding-button': 0px 8px,
+  'elevation': 6,
+  'font-size': map.get($-heading-body-2, 'size'),
+  'font-weight': map.get($-heading-body-2, 'weight'),
+  'letter-spacing': map.get($-heading-body-2, 'letter-spacing'),
+  'line-height': map.get($-heading-body-2, 'line-height'),
+  'wrapper': (
+    'margin': 8px,
+    'min-height': 48px,
+    'min-width': 344px,
+  ),
+);
+
+@include config.extend('components', 'Snackbar', $-config);

@@ -1,0 +1,43 @@
+@use '../index' as config;
+
+$-border-radius-base: config.get('helpers', 'border-radius', 'base');
+
+$-config: (
+  'line-height': 20px,
+  'label-top': 6px,
+  'prepend-append-margin': 8px,
+  'label-active-transform': translateY(-18px) scale(0.75),
+  'padding': 8px 0px 8px,
+  'padding-dense': 4px 0px 2px,
+  'border-radius': $border-radius-base,
+  'border-radius-rounded': 28px,
+  'wrapper-padding': 0px 1px 0px 12px,
+  'solo': (
+    'depth': 2,
+    'min-height': 48px,
+    'min-height-dense': 40px,
+  ),
+  'filled': (
+    'margin-top': 22px,
+    'border-radius': $-border-radius-base $-border-radius-base 0 0,
+    'top-label': 20px,
+    'transform-label-active': translateY(-10px) scale(0.75),
+    'top-label-dense': 12px,
+    'transform-label-active-dense': translateY(-8px) scale(0.75),
+
+  ),
+  'outlined': (
+    'margin-top': 22px,
+    'border-radius': $-border-radius-base $-border-radius-base 0 0,
+    'top-label': 18px,
+    'transform-label-active': translateY(-24px) scale(0.75),
+    'top-label-dense': 12px,
+    'transform-label-active-dense': translateY(-8px) scale(0.75),
+  ),
+  'filled-outlined': (
+    'min-height': 56px,
+    'min-height-dense': 40px,
+  ),
+);
+
+@include config.extend('components', 'TextField', $-config);

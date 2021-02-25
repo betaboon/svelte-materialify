@@ -1,0 +1,11 @@
+@use '../index' as config;
+
+$-config: (
+  'max-height': 350px,
+  'content': (
+    'border-radius': config.get('helpers', 'border-radius', 'base'),
+    'elevation': 8,
+  ),
+);
+
+@include config.extend('components', 'Menu', $-config);

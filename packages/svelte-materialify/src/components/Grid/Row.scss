@@ -1,4 +1,6 @@
-@import '../../styles/variables';
+@use '../../styles/config/config-loader' as config;
+$grid-gutter: config.get('grid', 'gutter');
+$form-grid-gutter: config.get('grid', 'form-gutter');
 
 .s-row {
   display: flex;

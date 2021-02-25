@@ -1,4 +1,9 @@
+@use 'sass:meta';
 @use 'config-override';
-@forward '../tools/config' show extend, get with (
-  $override: config-override.$override,
+@forward '../tools/config' show get, extend with (
+  $override: if(
+    meta.global-variable-exists('override', 'config-override'),
+    config-override.$override,
+    ()
+  ),
 );

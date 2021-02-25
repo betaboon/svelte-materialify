@@ -1,0 +1,48 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+  'icon-font-size': 18px,
+  'icon-padding': 12px,
+  'outline-border-width': thin,
+  'rounded-border-radius': 28px,
+  'transition': opacity 0.2s config.get('transitions', 'ease-in-out'),
+  'transition-duration': 0.28s,
+  'sizes': (
+    'x-small': 20,
+    'small': 28,
+    'default': 36,
+    'large': 44,
+    'x-large': 52,
+  ),
+  'font-sizes': (
+    'x-small': 0.625rem,
+    'small': 0.75rem,
+    'default': 0.875rem,
+    'large': 0.875rem,
+    'x-large': 1rem,
+  ),
+  'opacity': (
+    'active': 0.18,
+    'focus': 0.24,
+    'hover': 0.8,
+  ),
+  'fab': (
+    'sizes': (
+      'x-small': 32,
+      'small': 40,
+      'default': 56,
+      'large': 64,
+      'x-large': 72,
+    ),
+    'icon-sizes': (
+      'x-small': 18,
+      'small': 24,
+      'default': 24,
+      'large': 28,
+      'x-large': 32,
+    ),
+  ),
+);
+
+@include config.extend('components', 'Button', $-config);

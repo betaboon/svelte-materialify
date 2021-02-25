@@ -1,0 +1,24 @@
+@use '../index' as config;
+
+$-config: (
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+  'stream': (
+    'opacity': 0.3,
+    'border-width': 4px,
+  ),
+  'stripe': (
+    'gradient': linear-gradient(
+      135deg,
+      hsla(0, 0%, 100%, 0.25) 25%,
+      transparent 0,
+      transparent 50%,
+      hsla(0, 0%, 100%, 0.25) 0,
+      hsla(0, 0%, 100%, 0.25) 75%,
+      transparent 0,
+      transparent
+    ),
+    'background-size': 40px 40px,
+  ),
+);
+
+@include config.extend('components', 'ProgressLinear', $-config);

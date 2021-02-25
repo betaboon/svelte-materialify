@@ -7,7 +7,8 @@
 @use 'elements';
 @use 'helpers';
 
+// @include helpers.styles;
+// @include elements.styles;
+// @include themes.styles;
 
-@include helpers.styles;
-@include elements.styles;
-@include themes.styles;
+@debug config.get('components', 'container', 'padding');

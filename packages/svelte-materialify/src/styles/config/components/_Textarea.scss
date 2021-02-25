@@ -1,0 +1,21 @@
+@use '../index' as config;
+
+$-config: (
+  'line-height': 1.75rem,
+  'min-height': 32px,
+  'padding': 0px,
+  'icon': (
+    'margin-top': 2px,
+  ),
+  'icon-filled': (
+    'margin-top': 28px,
+  ),
+  'icon-outlined': (
+    'margin-top': 18px,
+  ),
+  'icon-solo': (
+    'margin-top': 8px,
+  ),
+);
+
+@include config.extend('components', 'Textarea', $-config);

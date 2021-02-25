@@ -1,0 +1,42 @@
+@use '../index' as config;
+
+$-config: (
+  'width': 38px,
+  'opacity-disabled': 0.6,
+  'thumb': (
+    'elevation': 4,
+    'top': calc(50% - 10px),
+    'height': 20px,
+    'width': 20px,
+    'dense': (
+      'height': 18px,
+      'width': 18px,
+    ),
+  ),
+  'track': (
+    'height': 14px,
+    'width': 36px,
+    'top': calc(50% - 7px),
+    'x': 2px,
+    'opacity': 0.6,
+    'border-radius':  8px,
+    'dense': (
+      'top': calc(50% - 12px),
+      'height': 12px,
+      'width': 32px,
+    ),
+    'inset': (
+      'border-radius': 14px,
+      'height': 28px,
+      'width': 48px,
+      'opacity': 0.32,
+    ),
+    'dense-inset': (
+      'height': 22px,
+      'width': 44px,
+    ),
+
+  ),
+);
+
+@include config.extend('components', 'Switch', $-config);

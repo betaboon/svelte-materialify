@@ -1,0 +1,32 @@
+@use '../index' as config;
+@use '../tools/colors';
+
+$-config: (
+  'top': auto,
+  'right': auto,
+  'height': 20px,
+  'min-width': 20px,
+  'padding': 4px 6px,
+  'border-radius': 10px,
+  'border-width': 2px,
+  'font-family': config.get('helpers', 'typography', 'font', 'font-family'),
+  'font-size': 12px,
+  'letter-spacing': 0,
+  'line-height': 1,
+  'color': colors.get('shades', 'white'),
+  'icon': (
+    'margin': 0 -2px,
+    'padding': 4px 6px,
+  ),
+  'wrapper': (
+    'margin': 0 4px,
+  ),
+  'dot': (
+    'border-radius': 4.5px,
+    'border-width': 1.5px,
+    'height': 9px,
+    'width': 9px,
+  ),
+);
+
+@include config.extend('components', 'Badge', $-config);

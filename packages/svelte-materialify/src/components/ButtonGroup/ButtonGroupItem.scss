@@ -1,5 +1,7 @@
-@import './variables';
+  @use '../../styles/config/config-loader' as config;
 
+  $opacity: config.get('components', 'ButtonGroupItem', 'opacity');
+  $padding: config.get('components', 'ButtonGroupItem', 'padding');
 // .s-btn-group-item {
 //   border-radius: 0;
 //   border-style: solid;

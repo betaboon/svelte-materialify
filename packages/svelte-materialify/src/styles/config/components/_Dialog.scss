@@ -1,0 +1,27 @@
+@use 'sass:map':
+@use '../index' as config;
+
+$-heading-h6: config.get('helpers', 'typography', 'heading', 'h6');
+
+$-config: (
+  'border-radius': config.get('helpers', 'border-radius', 'base'),
+  'elevation': 24,
+  'margin': 24px,
+  'max-height': 90%,
+  'card': (
+    'title': (
+      'padding': 16px 24px 10px,
+      'font-size': map.get($-heading-h6, 'size'),
+      'font-weight': map.get($-heading-h6, 'weight'),
+      'letter-spacing': map.get($-heading-h6, 'letter-spacing'),
+    ),
+    'subtitle': (
+      'padding': 0px 24px 20px,
+    ),
+    'text': (
+      'padding': 0px 24px 20px,
+    ),
+  ),
+);
+
+@include config.extend('components', 'Dialog', $-config);

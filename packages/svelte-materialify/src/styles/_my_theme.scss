@@ -49,7 +49,7 @@ $theme: (
   'chips': #e0e0e0,
   'cards': colors.get('shades', 'white'),
   'app-bar': colors.get('grey', 'lighten-4'),
-  'navigation-drawer': colors.get('shades', 'white'),
+  'navigation-drawer': colors.get('shades', 'white')
 );
 
 @include themes.register('my-theme', $theme);

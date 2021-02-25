@@ -1,0 +1,14 @@
+@use '../index' as config;
+
+$-config: (
+  'flex': 0 1 auto,
+  'margin': 0,
+  'padding': 18px 12px,
+  'padding-even-child': 0 12px,
+  'item': (
+    'font-size': 14px,
+    'font-size-large': 16px,
+  ),
+);
+
+@include config.extend('components', 'Breadcrumbs', $-config);
